@@ -24,3 +24,18 @@ Se han estudiado los diferentes tipos de [arquitecturas software] (http://jj.git
 Es por esto por lo que se va a utilizar una arquitectura de microservicios basada en una API REST para el desarollo de la plataforma CRUT, empleando para ello el conjunto de tecnologías que la plataforma MEAN ofrece como se muestra en el siguiente imagen:
 
 ![alt text](https://raw.githubusercontent.com/jmanday/CRUT/gh-pages/images/arquitectura.png "Arquitectura proyecto")
+
+
+## Servicios, microservicios y tecnologías
+Como se puede apreciar en la imagen, el servidor de este tipo de arquitecturas se componen de dos partes:
+
+- La parte del **backend** donde desarrolla el API REST basado en [Nodejs](https://nodejs.org/es/) y [Express](http://expressjs.com/es/).
+
+- La parte del **frontend** donde se implementa la vista del cliente mediante [Angularjs](https://angularjs.org/).
+
+
+Para implementar este tipo de arquitectura se va a utilizar la plataforma de servicios [AWS](https://aws.amazon.com/es/). De este modo se tendrá separada la parte del servidor de los microservicios.
+
+El servidor será desplegado en el servicio [Amazon Elastic Beanstalk](https://aws.amazon.com/es/elasticbeanstalk/), en el cual se integran todas las tecnologías necesarias para su desarrollo y funcionamiento.
+
+Por ahora se va a utilizar un sólo microservicio basado en [MongoDB](https://www.mongodb.com/es) donde se van a alojar los datos de las diferentes configuraciones de los dispotivos, y el cual correrá bajo el servicio [Amazon EC2](https://aws.amazon.com/es/ec2/) como una máquina totalmente aislada y separada del servidor.
