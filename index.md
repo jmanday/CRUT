@@ -39,3 +39,4 @@ Para implementar este tipo de arquitectura se va a utilizar la plataforma de ser
 El servidor será desplegado en el servicio [Amazon Elastic Beanstalk](https://aws.amazon.com/es/elasticbeanstalk/), en el cual se integran todas las tecnologías necesarias para su desarrollo y funcionamiento.
 
 Por ahora se va a utilizar un sólo microservicio basado en [MongoDB](https://www.mongodb.com/es) donde se van a alojar los datos de las diferentes configuraciones de los dispotivos, y el cual correrá bajo el servicio [Amazon EC2](https://aws.amazon.com/es/ec2/) como una máquina totalmente remota y separada del servidor.
+
