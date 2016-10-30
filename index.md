@@ -19,7 +19,7 @@ CRUT elimina las barreras existentes hasta ahora y agiliza las operaciones de co
 
 
 ##Arquitecura software
-Se han estudiado los diferentes tipos de [arquitecturas software] (http://jj.github.io/CC/documentos/temas/Arquitecturas_para_la_nube) para evaluar a cual de ellas mejor se adapta la aplicación. Tras un análisis y evaluación de lo que cada una ofrece y teniendo claro lo que el proyecto necesita y cual es su comportamiento, he decidido que la arquitectura de microservicios es la que mas se adapta a las necesidades de mi producto.
+Se han estudiado los diferentes tipos de para evaluar a cual de ellas mejor se adapta la aplicación. Tras un análisis y evaluación de lo que cada una ofrece y teniendo claro lo que el proyecto necesita y cual es su comportamiento, he decidido que la arquitectura de microservicios es la que mas se adapta a las necesidades de mi producto.
 
 Es por esto por lo que se va a utilizar una arquitectura de microservicios basada en una API REST para el desarollo de la plataforma CRUT, empleando para ello el conjunto de tecnologías que la plataforma MEAN ofrece como se muestra en el siguiente imagen:
 
