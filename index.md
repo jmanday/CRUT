@@ -23,4 +23,4 @@ Se han estudiado los diferentes tipos de para evaluar a cual de ellas mejor se a
 
 Es por esto por lo que se va a utilizar una arquitectura de microservicios basada en una API REST para el desarollo de la plataforma CRUT, empleando para ello el conjunto de tecnologías que la plataforma MEAN ofrece como se muestra en el siguiente imagen:
 
-![](//github.com/jmanday/CRUT/blob/gh-pages/images/arquitectura.png "Arquitectura Software")
+![alt text](https://raw.githubusercontent.com/jmanday/CRUT/gh-pages/images/arquitectura.png "Arquitectura proyecto")
