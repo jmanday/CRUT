@@ -14,3 +14,5 @@ Una vez comentado el por qué de la elección de **Ansible** lo siguiente será 
 ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/h2-img1.png "Instalación Ansible")
 
 ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/h2-img2.png "Instalación Ansible")
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/h2-img3.png "Instalación Ansible")
