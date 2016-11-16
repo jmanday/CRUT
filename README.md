@@ -16,3 +16,50 @@ Una vez comentado el por qué de la elección de **Ansible** lo siguiente será 
 ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/h2-img2.png "Instalación Ansible")
 
 ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/h2-img3.png "Instalación Ansible")
+
+Con el sistema de provisionamiento ya instalado, lo siguiente es crear la instancia remota. Para la creación y gestión de las instancias remotas se va a hacer uso de [Amazon Web Services](https://aws.amazon.com/es/), uno de los principales IaaS del mercado y que mejores servicios ofrece, en los que muchas empresas tienen alojada toda su infraestructura. Se aprovechará también la licencia como estudiante que ofrecen para disfrutar de las ventajas que tiene. 
+
+Esta instancia se va a crear en base a una **AMI**(Amazon Machine Image) como se puede visualizar. Esta imagen de Linux viene con algunos paquetes básicos instalados como Python, el cual es necesario para poder utilizar **Ansible**.
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/h2-img4.png "Creación Instancia Remota")
+
+
+Una vez elegido el tipo de imagen a desplegar en la instancia, lo siguiente es seleccionar el tipo de máquina a crear. Como se puede ver en la imagen, Amazon proporciona una amplia variedad de instancias que van dependiendo en función de las prestaciones que ofrece. Para nuestra instancia *instance1-ami* se escogerá una de tipo t2.micro, la cual que presenta unas características adecuadas para el uso del proyecto que vamos a desplegar.
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/h2-img5.png "Creación Instancia Remota")
+
+
+En el siguiente paso de la definición de la instancia remota, se puede configurar con mas detalle algunos parámetros mas específicos de la máquina como son la red privada a la que va a pertencer, los roles de **IAM**(Identity and Access Magnament), etc.
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/h2-img6.png "Creación Instancia Remota")
+
+
+Es posible también añadirle un volumnen unidad de almacenamiento, aunque por defecto se crea con un volumen SSD de 8 GB que soporta **snapshot**.
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/h2-img7.png "Creación Instancia Remota")
+
+
+Se le puede incluir un *tag* a la instancia remota para poder referirse a ella con un nombre descriptivo que la pueda diferenciar. Esto es útil para cuando se esta trabajando con varias máquinas remotas y cada una tiene un propósito diferente.
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/h2-img8.png "Creación Instancia Remota")
+
+
+A través de la configuración de los grupos de seguridad dotamos a la instancia de Amazon con un conjunto de reglas para controlar el tráfico hacia la misma.
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/h2-img9.png "Creación Instancia Remota")
+
+
+En la siguiente imagen vemos una resumen de la instancia que se ha creado desde la herramienta web de **AWS**.
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/h2-img10.png "Creación Instancia Remota")
+
+
+Nos crearemos un par de claves (.perm) que serán necesarias para poder realizar conexiones hacia la máquina remota a través del protocolo ssh.
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/h2-img11.png "Creación Instancia Remota")
+
+
+Con todo configurado y definido, lo último que queda es lanzar la instancia.
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/h2-img12.png "Creación Instancia Remota")
+
+Como se puede ver en la lista de instancias que estan corriendo, la que nos acabamos de crear aparece con ese estado y con una lista de atributos que nos serán necesarios, como por ejemplo el dns público que lo utilizaremos para las conexiones ssh.
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/h2-img13.png "Creación Instancia Remota")
