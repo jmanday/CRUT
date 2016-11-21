@@ -95,5 +95,8 @@ Al indicarle el nombre del grupo solo le hará *ping* a las máquinas definidas 
 
 ### Ficheros yaml
 
-Con la máquina remota ejecutándose y la herramienta **ansible** configurada para poder conectarse a ella, lo siguiente será definir el aprovisionamiento a través de los ficheros **yaml**. Para este caso he definido dos archivos de aprovisionamiento, un primer archivo [updateSys.yml](https://github.com/jmanday/CRUT/blob/provisionamiento/playbooks/ami/updateSys.yml) para actualizar todos los paquetes del sistema, y un segundo fichero [node.yml](https://github.com/jmanday/CRUT/blob/provisionamiento/playbooks/ami/node.yml) para instalar todo el entorno **node** junto con **npm** y **nvm**.
+Con la máquina remota ejecutándose y la herramienta **ansible** configurada para poder conectarse a ella, lo siguiente será definir el provisionamiento a través de los ficheros **yaml**. Para este caso he definido dos archivos de provisionamiento, un primer archivo [updateSys.yml](https://github.com/jmanday/CRUT/blob/provisionamiento/playbooks/ami/updateSys.yml) para actualizar todos los paquetes del sistema, y un segundo fichero [node.yml](https://github.com/jmanday/CRUT/blob/provisionamiento/playbooks/ami/node.yml) para instalar todo el entorno **node** junto con **npm** y **nvm**.
  
+ ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/h2-img17.png "Fichero de provisionamiento para actualizar los paquetes")
+ 
+ ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/h2-img18.png "Fichero de provisionamiento para instalar el entorno node, npm y nvm")
