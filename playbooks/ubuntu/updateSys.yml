@@ -1,6 +1,6 @@
-# updatePkg.yml
+# updateSys.yml
 ---
-- hosts: ubuntuServer2
+- hosts: ubuntuMySQL
   become: yes
   remote_user: ubuntu
  

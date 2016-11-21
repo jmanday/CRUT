@@ -95,8 +95,42 @@ Al indicarle el nombre del grupo solo le hará *ping* a las máquinas definidas 
 
 ### Ficheros yaml
 
-Con la máquina remota ejecutándose y la herramienta **ansible** configurada para poder conectarse a ella, lo siguiente será definir el provisionamiento a través de los ficheros **yaml**. Para este caso he definido dos archivos de provisionamiento, un primer archivo [updateSys.yml](https://github.com/jmanday/CRUT/blob/provisionamiento/playbooks/ami/updateSys.yml) para actualizar todos los paquetes del sistema, y un segundo fichero [node.yml](https://github.com/jmanday/CRUT/blob/provisionamiento/playbooks/ami/node.yml) para instalar todo el entorno **node** junto con **npm** y **nvm**.
+Con la máquina remota ejecutándose y la herramienta **ansible** configurada para poder conectarse a ella, lo siguiente será definir el provisionamiento a través de los ficheros **yaml**. Para este caso he definido dos archivos de provisionamiento, un primer archivo [updateSys.yml](https://github.com/jmanday/CRUT/blob/provisionamiento/playbooks/ami/updateSys.yml) para actualizar todos los paquetes del sistema, y un segundo fichero [node.yml](https://github.com/jmanday/CRUT/blob/provisionamiento/playbooks/ami/node.yml) para instalar todo el entorno **nvm** junto con **npm** y **node**.
  
  ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/h2-img17.png "Fichero de provisionamiento para actualizar los paquetes")
  
  ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/h2-img18.png "Fichero de provisionamiento para instalar el entorno node, npm y nvm")
+ 
+ 
+## Segundo provisionamiento
+Para cumplir con la arquitectura basada en microservicios, se va a definir otra instancia remota que será dedicada al microservcio de [MySQL](https://www.mysql.com/) y almacenar la persistencia de datos.
+
+
+### Definición de instancia
+
+Se han seguido los mismos pasos que en la creación de la instancia anterior, con la salvedad de que el tipo de imagen utilizada para este mircorservicio es un **Ubuntu Server**. Va a tener las mismas caracterísitcas, prestaciones, grupo de seguridad y clave pem que la máquina para el servidor.
+
+ ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/h2-img19.png "Definición instancia")
+ 
+  ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/h2-img20.png "Definición instancia")
+  
+   ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/h2-img21.png "Definición instancia")
+   
+
+### Prueba de ansible   
+
+Vemos que todo se ha realizado correctamente una vez que se han desarrollado todos los pasos necesarios.
+
+   ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/h2-img22.png "Conexión ssh a la instancia remota")
+   
+   ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/h2-img23.png "Prueba de ansible a la instancia remota")
+   
+
+### Ficheros yaml
+Para el provisionamiento de esta instancia se han definido también dos ficheros **yaml**. El primero de ellos [updateSys.yml](https://github.com/jmanday/CRUT/blob/provisionamiento/playbooks/ubuntu/updateSys.yml), como en el caso anterior esta orientado a la actualización del sistema y los paquetes del mismo. Con el segundo fichero [mysql.yml](https://github.com/jmanday/CRUT/blob/provisionamiento/playbooks/ubuntu/mysql.yml)provisionamos a la máquina con el microservicio de **MySQL** y también con **git**
+
+   ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/h2-img24.png "Fichero de provisionamiento para actualizar el sistema")
+   
+   ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/h2-img25.png "Fichero de provisionamiento para instalar MySQL y git")
+
+Como se ha podido comprobar este primer aprovisionamiento mediante **Ansible** se ha realizado de manera correcta, desplegando a cada instancia remota las herramientas y paquetes necesarios para el proyecto.

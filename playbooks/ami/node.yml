@@ -11,8 +11,8 @@
         - git
         - curl
         - wget
-        
+              
     - name: Instalar npm, nvm y  node
-      command: wget https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh/.install.sh
+      get_utl: url=https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh/.install.sh
       script: install.sh
       command: nvm install v6
