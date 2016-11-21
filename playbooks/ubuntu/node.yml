@@ -1,0 +1,25 @@
+# node.yml
+---
+- hosts: ubuntuServer
+  become: yes
+  remote_user: ubuntu
+ 
+  tasks:
+    - name: Instalar dependencias
+      apt: pkg={{ item }} state=present update_cache=yes
+      with_items:
+        - git
+        - curl
+        - build-essential
+        - libssl-dev
+        
+    - name: Instalar npm
+      apt: pkg=npm  state=latest
+    
+    - name: Instalar nvm
+      shell: curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
+      
+    - name: Instalar node usando nvm
+      command >
+        apt-get install nodejs-legacy
+        nvm install v6.9.1

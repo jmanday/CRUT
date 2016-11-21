@@ -1,0 +1,9 @@
+# updateSys.yml
+---
+- hosts: serverAMI
+  become: yes
+  remote_user: ec2-user
+ 
+  tasks:
+    - name: Actualizar sistema
+      command: yum -y update

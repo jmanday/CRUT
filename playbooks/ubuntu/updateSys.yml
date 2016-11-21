@@ -1,0 +1,14 @@
+# updatePkg.yml
+---
+- hosts: ubuntuServer2
+  become: yes
+  remote_user: ubuntu
+ 
+  tasks:
+    - name: Actualizar paquetes
+      apt: pkg=aptitude state=present
+
+    - name: Actualizar sistema
+      apt: >
+        update_cache=yes 
+        upgrade=full
