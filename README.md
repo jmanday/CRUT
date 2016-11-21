@@ -127,7 +127,7 @@ Vemos que todo se ha realizado correctamente una vez que se han desarrollado tod
    
 
 ### Ficheros yaml
-Para el provisionamiento de esta instancia se han definido también dos ficheros **yaml**. El primero de ellos [updateSys.yml](https://github.com/jmanday/CRUT/blob/provisionamiento/playbooks/ubuntu/updateSys.yml), como en el caso anterior esta orientado a la actualización del sistema y los paquetes del mismo. Con el segundo fichero [mysql.yml](https://github.com/jmanday/CRUT/blob/provisionamiento/playbooks/ubuntu/mysql.yml)provisionamos a la máquina con el microservicio de **MySQL** y también con **git**
+Para el provisionamiento de esta instancia se han definido también dos ficheros **yaml**. El primero de ellos [updateSys.yml](https://github.com/jmanday/CRUT/blob/provisionamiento/playbooks/ubuntu/updateSys.yml), como en el caso anterior esta orientado a la actualización del sistema y los paquetes del mismo. Con el segundo fichero [mysql.yml](https://github.com/jmanday/CRUT/blob/provisionamiento/playbooks/ubuntu/mysql.yml), provisionamos a la máquina con el microservicio de **MySQL** y también con **git**
 
    ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/h2-img24.png "Fichero de provisionamiento para actualizar el sistema")
    
