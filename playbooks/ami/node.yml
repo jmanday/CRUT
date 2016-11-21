@@ -10,10 +10,9 @@
       with_items:
         - git
         - curl
-    
+        - wget
+        
     - name: Instalar npm, nvm y  node
-      command: >
-        yum install -y gcc-c++ make
-        yum install -y nodejs
-        curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
-        nvm install v6
+      command: wget https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh/.install.sh
+      script: install.sh
+      command: nvm install v6
