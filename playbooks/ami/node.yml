@@ -1,6 +1,6 @@
 # node.yml
 ---
-- hosts: serverAMI
+- hosts: instance-server-AMI
   become: yes
   remote_user: ec2-user
  
