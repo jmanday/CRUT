@@ -67,7 +67,7 @@ Para comprobar que la instancia EC2 ha sido creada y se está ejecutando se esta
 
 
 ### Definición de instancia Ubuntu
-
+ 
 Se han seguido los mismos pasos que en la creación de la instancia anterior, con la salvedad de que el tipo de imagen utilizada para este mircorservicio es un **Ubuntu Server**. Va a tener las mismas caracterísitcas, prestaciones, grupo de seguridad y clave pem que la máquina para el servidor.
 
  ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/ansible/h2-img19.png "Definición instancia")
