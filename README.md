@@ -74,7 +74,7 @@ Se han seguido los mismos pasos que en la creación de la instancia anterior, co
   ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/ansible/h2-img20.png "Definición instancia")
   
    ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/ansible/h2-img21.png "Definición instancia")
-
+   
 
 ### Provisionamiento 1: ansible
 
