@@ -38,3 +38,14 @@ Para implementar este tipo de arquitectura se va a utilizar la plataforma de ser
 El servidor será desplegado en el servicio [Amazon Elastic Beanstalk](https://aws.amazon.com/es/elasticbeanstalk/), en el cual se integran todas las tecnologías necesarias para su desarrollo y funcionamiento.
 
 Por ahora se va a utilizar un sólo microservicio basado en [MongoDB](https://www.mongodb.com/es) donde se van a alojar los datos de las diferentes configuraciones de los dispotivos, y el cual correrá bajo el servicio [Amazon EC2](https://aws.amazon.com/es/ec2/) como una máquina totalmente remota y separada del servidor.
+
+
+## Provisionamiento
+
+Para realizar el provisionamiento correspondiente a las diferentes máquinas que componen la arquitectura del proyecto se han utilizado dos de las herramientas más conocidas en este ámbito como son **Ansible** y **Puppet**. Se ha completado un primer provisionamiento de las máquinas con **Ansible** y una vez que se ha comprobado que todo funciona y ha ido corrrectamente se ha vuelto a hacer el mismo provisionamiento sobre las máquinas (previamente habiendo desinstalado lo que **Ansible** provisionó) pero esta vez desde la herramienta de **Puppet**.
+
+Se han elegido estas dos herramientas software para asegurar que el aprovisionamiento se realiza correctamente independientemente del software utilizado, en este caso ambas estas implementadas con diferentes lenguajes de programación, mientras que **Asible** está programadoa bajo **Python**, **Puppet** lo esta echo bajo **Ruby**.
+
+Se han utilizado dos instancias remotas para montar la arquitectura del proyecto, una sobre **CentOS** donde se instalarán todas las dependencias y se almacenarán los ficheros necesarios del proyecto para que se ejecute la *API REST*, y otra sobre **Ubuntu** donde se desplegará el microservicio de persistencia de datos basado en *MySQL*.
+
+El proceso realizado para definir las instancias de las máquinas remotas se puede ver en el siguiente enlace.
