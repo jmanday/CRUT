@@ -76,6 +76,7 @@ Se han seguido los mismos pasos que en la creación de la instancia anterior, co
   
    ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/ansible/h2-img21.png "Definición instancia")
    
+##Provionar instancias remotas
 
 ### Provisionamiento 1: ansible
 
@@ -116,7 +117,8 @@ Con la máquina remota ejecutándose y la herramienta **ansible** configurada pa
  ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/ansible/h2-img18.png "Fichero de provisionamiento para instalar el entorno node, npm y nvm")
  
 
-### Prueba de ansible sobre la instancia Ubuntu  
+### Prueba de ansible sobre la instancia Ubuntu 
+ 
 Para cumplir con la arquitectura basada en microservicios, se va a definir otra instancia remota que será dedicada al microservcio de [MySQL](https://www.mysql.com/) y almacenar la persistencia de datos.
 Vemos que todo se ha realizado correctamente una vez que se han desarrollado todos los pasos necesarios.
 
