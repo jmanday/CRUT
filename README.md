@@ -50,4 +50,6 @@ Se han elegido estas dos herramientas software para asegurar que el aprovisionam
 
 Se han utilizado dos instancias remotas para montar la arquitectura del proyecto, una sobre CentOS donde se instalarán todas las dependencias y se almacenarán los ficheros necesarios del proyecto para que se ejecute la API REST, y otra sobre Ubuntu donde se desplegará el microservicio de persistencia de datos basado en MySQL.
 
-El proceso realizado para definir las instancias de las máquinas remotas se puede ver en el siguiente [enlace](https://github.com/jmanday/CRUT/blob/provisionamiento/README.md#definir-instancias-remotas).
+El proceso realizado para definir las instancias de las máquinas remotas se puede ver en el siguiente enlace de [creación de instancias remotas](https://github.com/jmanday/CRUT/blob/provisionamiento/README.md#definir-instancias-remotas).
+
+El primer provisionamiento sobre ambas máquinas ha sido realizado mediante **Ansbile**, previamente siendo instalado en la máquina central desde la que se desplegará el provisionamiento como se documenta en el siguiente enlace de [provisionamiento con ansible](https://github.com/jmanday/CRUT/tree/provisionamiento#provisionamiento-1-ansible). Se han utilizado dos ficheros de provisionamiento como se muestran a continuación, uno para cada instancia remota.
