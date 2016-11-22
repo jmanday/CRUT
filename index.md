@@ -52,4 +52,4 @@ Se han elegido estas dos herramientas software para asegurar que el aprovisionam
 
 Se han utilizado dos instancias remotas para montar la arquitectura del proyecto, una sobre **CentOS** donde se instalarán todas las dependencias y se almacenarán los ficheros necesarios del proyecto para que se ejecute la *API REST*, y otra sobre **Ubuntu** donde se desplegará el microservicio de persistencia de datos basado en *MySQL*.
 
-El proceso realizado para definir las instancias de las máquinas remotas se puede ver en el siguiente enlace.
+El proceso realizado para definir las instancias de las máquinas remotas se puede ver en el siguiente [enlace](https://github.com/jmanday/CRUT/blob/provisionamiento/README.md).
