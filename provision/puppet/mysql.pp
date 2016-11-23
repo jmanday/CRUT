@@ -2,7 +2,7 @@
 
 class mysql {
 
-	exec { ‘mysql-install':
+	exec { 'mysql-install':
 		command => 'apt-get install mysql-server',
 		user => 'ubuntu',
 		environment => 'HOME=/home/ubuntu',

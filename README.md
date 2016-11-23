@@ -147,26 +147,39 @@ Al igual que el resto de sistemas de provisionamiento, **Puppet** se basa en la 
 
 Lo siguiente será definir el fichero de provisionamiento para la instancia de AMI, es decir, para desplegar todo el entorno necesario en la máquina servidor de la API REST. En el se indicarán todas las dependencias y paquetes necesarios.
 
-![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/puppet/h2-img2.png "Generar contraseña de usuario")
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/puppet/h2-img5.png "Generar contraseña de usuario")
 
 
 En la máquina remota AMI será necesario instalar **Puppet**, por lo que procedemos a ello.
 
-![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/puppet/h2-img3.png "Generar contraseña de usuario")
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/puppet/h2-img6.png "Generar contraseña de usuario")
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/puppet/h2-img7.png "Generar contraseña de usuario")
 
 
 El fichero de despliegue para **Puppet** se descargará en la instancia de AMI para que lo pueda ejecutarlo e instalar toda la configuración descrita en él.
 
-![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/puppet/h2-img4.png "Generar contraseña de usuario")
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/puppet/h2-img8.png "Generar contraseña de usuario")
 
 
 Con el siguiente comando se instalarán todas las dependencias referenciadas en el fichero de provisionamiento, en este caso todo el entorno *nodejs* y *nvm* para la instancia AMI.
 
-![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/puppet/h2-img5.png "Generar contraseña de usuario")
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/puppet/h2-img9.png "Generar contraseña de usuario")
 
 
 Probamos que se han instaldo las dependencias y paquetes correctamente.
 
-![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/puppet/h2-img6.png "Generar contraseña de usuario")
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/puppet/h2-img10.png "Generar contraseña de usuario")
 
-Para la instancia remota Ubuntu que contendrá el microservicio de MySQL se seguirán los mismos pasos para la instalación. Una vez realizada se definirá el fichero que definirá la estructura de paquetes y dependecias a desplegar en dicha instancia.
+Para la instancia remota Ubuntu que contendrá el microservicio de MySQL se seguirán los mismos pasos para la instalación. Una vez realizada se definirá el fichero que definirá la estructura de paquetes y dependecias a desplegar en dicha instancia y se copiará en la máquina remota para su posterior instalación, como se muestra en las siguientes imágenes.
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/puppet/h2-img1.png "Instalar mysql")
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/puppet/h2-img2.png "Instalar mysql")
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/puppet/h2-img3.png "Instalar mysql")
+
+
+Por último lanzamos el servicio de mysql para comprobar que todo se ha realizado correctamente.
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/puppet/h2-img4.png "Instalar mysql")
