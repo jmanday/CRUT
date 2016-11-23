@@ -54,15 +54,15 @@ El proceso realizado para definir las instancias de las máquinas remotas se pue
 
 El primer provisionamiento sobre ambas máquinas ha sido realizado mediante **Ansbile**, previamente siendo instalado en la máquina central desde la que se desplegará el provisionamiento como se documenta en el siguiente enlace de [provisionamiento con ansible](https://github.com/jmanday/CRUT/tree/provisionamiento#provisionamiento-1-ansible). Se han utilizado dos ficheros de provisionamiento para cada instancia remota ya que se ha modularizado las tareas como se muestran a continuación.
 
-![alt text](https://raw.githubusercontent.com/jmanday/CRUT/provisionamiento/provision/ansible/playbooks/ami/updateSys.yml, "Fichero Provisionamiento AMI")
+![alt text](https://raw.githubusercontent.com/jmanday/CRUT/provisionamiento/provision/ansible/playbooks/ami/updateSys.yml "Fichero Provisionamiento AMI")
 
 
-![alt text](https://raw.githubusercontent.com/jmanday/CRUT/provisionamiento/provision/ansible/playbooks/ami/node.yml, "Fichero Provisionamiento AMI")
+![alt text](https://raw.githubusercontent.com/jmanday/CRUT/provisionamiento/provision/ansible/playbooks/ami/node.yml "Fichero Provisionamiento AMI")
 
 
-![alt text](https://raw.githubusercontent.com/jmanday/CRUT/provisionamiento/provision/ansible/playbooks/ubuntu/updateSys.yml, "Fichero Provisionamiento Ubuntu")
+![alt text](https://raw.githubusercontent.com/jmanday/CRUT/provisionamiento/provision/ansible/playbooks/ubuntu/updateSys.yml "Fichero Provisionamiento Ubuntu")
 
-![alt text](https://raw.githubusercontent.com/jmanday/CRUT/provisionamiento/provision/ansible/playbooks/ubuntu/mysql.yml, "Fichero Provisionamiento Ubuntu")
+![alt text](https://raw.githubusercontent.com/jmanday/CRUT/provisionamiento/provision/ansible/playbooks/ubuntu/mysql.yml "Fichero Provisionamiento Ubuntu")
 
 
 Para probar el mismo provisionamiento pero con otra herramienta diferente se ha escogido **Puppet**. Una herramienta basada en Ruby que se basa en la definición de módulos y clases para instalar paquetes y dependencias. En el siguiente enlace de [provisionamiento con puppet]() se puede ver la prueba de que todo se realizó correctamente. Al igual que en el provisionamiento con **Ansible**, se han utilizado dos ficheros para realizar toda la tarea de provisionamiento, uno para cada máquina virtual remota.
