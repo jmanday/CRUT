@@ -1,17 +1,3 @@
-#Usuario ubuntu
-
-user { 'ubuntu':
-  ensure  => 'present',
-  password => '$1$2oW09qoG$Npfy2oYEwO0WQAv33k3TN1/', #Clave generada con openssl
-  comment => 'Creación de nuevo usuario',
-  gid     => '100',
-  groups  => ['sudo', 'audio', 'src', 'video'],
-  home    => '/home/ubuntu’,
-  shell   => '/bin/bash',
-  uid     => '1002',
-  managehome => yes,
-}
-
 #Instalar nvm y node
 
 class nodejs {
