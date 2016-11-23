@@ -173,6 +173,8 @@ Probamos que se han instaldo las dependencias y paquetes correctamente.
 
 Para la instancia remota Ubuntu que contendrá el microservicio de MySQL se seguirán los mismos pasos para la instalación. Una vez realizada se definirá el fichero que definirá la estructura de paquetes y dependecias a desplegar en dicha instancia y se copiará en la máquina remota para su posterior instalación, como se muestra en las siguientes imágenes.
 
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/puppet/h2-img11.png "Instalar mysql")
+
 ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/puppet/h2-img1.png "Instalar mysql")
 
 ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/puppet/h2-img2.png "Instalar mysql")
