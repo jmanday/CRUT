@@ -170,5 +170,3 @@ Probamos que se han instaldo las dependencias y paquetes correctamente.
 ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/puppet/h2-img6.png "Generar contraseña de usuario")
 
 Para la instancia remota Ubuntu que contendrá el microservicio de MySQL se seguirán los mismos pasos para la instalación. Una vez realizada se definirá el fichero que definirá la estructura de paquetes y dependecias a desplegar en dicha instancia.
-
-
