@@ -2,16 +2,16 @@
 layout: index
 ---
 
-#CRUT
+# CRUT
 
-##Descripción del problema
+## Descripción del problema
 
 En el ámbito de la industria 4.0 son muchos los sistemas que continúan anclados a un entorno de ejecución que les impiden escalar y mejorar su propio rendimiento.
 
 Son muchos los dispositivos, tecnologías, protocolos y software empleados en el desarrollo de un sistema de control industrial. Una de las principales funciones que se desarrollan en este ámbito esta orientada a la configuración de los dispositivos de control, los cuales necesitan de unos parámetros e información necesaria para poder realizar su cometido.
 
 
-##Solución propuesta
+## Solución propuesta
 
 CRUT (Cloud RTU Universal Tool) nace de la necesidad que hasta el momento el mundo de la industria ha vivido en el marco de la configuración sobre dispositivos de carácter programables como PLCs, RTUs, etc, encargados de controlar el correcto comportamiento de procesos industriales.
 
@@ -22,7 +22,7 @@ La herramienta CRUT agiliza todo ese proceso, ya que de este modo no es necesari
 CRUT elimina las barreras existentes hasta ahora y agiliza las operaciones de configuración, haciendolas mas ligeras y expandibles.
 
 
-##Arquitecura software
+## Arquitecura software
 
 Se han estudiado los diferentes tipos de arquitecturas software para evaluar a cual de ellas mejor se adapta la aplicación. Tras un análisis y evaluación de lo que cada una ofrece y teniendo claro lo que el proyecto necesita y cual es su comportamiento, he decidido que la arquitectura de microservicios es la que mas se adapta a las necesidades de mi producto.
 
@@ -31,7 +31,7 @@ Es por esto por lo que se va a utilizar una arquitectura de microservicios basad
 ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito1/arquitectura.png "Arquitectura Proyecto")
 
 
-##Servicios, microservicios y tecnologías
+## Servicios, microservicios y tecnologías
 
 Como se puede apreciar en la imagen, el servidor de este tipo de arquitecturas se componen de dos partes:
 
@@ -46,16 +46,16 @@ El servidor será desplegado en el servicio Amazon Elastic Beanstalk, en el cual
 Por ahora se va a utilizar un sólo microservicio basado en MySQL donde se van a alojar los datos de las diferentes configuraciones de los dispotivos, y el cual correrá bajo el servicio Amazon EC2 como una máquina totalmente remota y separada del servidor.
 
 
-##Provisionamiento
+## Provisionamiento
 
 Para la realización de este proceso voy a utilizar dos sistemas de provisionamiento diferentes sobre dos instancias de máquinas virtuales. La primera instancia será provisonada mediante [Ansible](https://www.ansible.com/), y para la segunda se utilizará [Puppet](https://puppet.com/).
 
 
-###Definir instancias remotas
+### Definir instancias remotas
 
 Con el sistema de provisionamiento ya instalado, lo siguiente es crear la instancia remota. Para la creación y gestión de las instancias remotas se va a hacer uso de [Amazon Web Services](https://aws.amazon.com/es/), uno de los principales IaaS del mercado y que mejores servicios ofrece en los que muchas empresas tienen alojada toda su infraestructura. Se aprovechará también la licencia como estudiante que ofrecen para disfrutar de las ventajas que tiene. 
 
-####Definición de instancia AMI
+#### Definición de instancia AMI
 
 Esta instancia se va a crear en base a una **AMI**(Amazon Machine Image) como se puede visualizar. Esta imagen de Linux viene con algunos paquetes básicos instalados como Python, el cual es necesario para poder utilizar **Ansible**.
 
@@ -112,7 +112,7 @@ Para comprobar que la instancia EC2 ha sido creada y se está ejecutando se esta
 ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/ansible/h2-img14.png "Creación Instancia Remota")
 
 
-####Definición de instancia Ubuntu
+#### Definición de instancia Ubuntu
  
 Se han seguido los mismos pasos que en la creación de la instancia anterior, con la salvedad de que el tipo de imagen utilizada para este mircorservicio es un **Ubuntu Server**. Va a tener las mismas caracterísitcas, prestaciones, grupo de seguridad y clave pem que la máquina para el servidor.
 
