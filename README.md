@@ -159,3 +159,7 @@ En la máquina remota AMI será necesario instalar **Puppet**, por lo que proced
 
 ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/puppet/h2-img3.png "Generar contraseña de usuario")
 
+
+El fichero de despliegue para **Puppet** se descargará en la instancia de AMI para que lo pueda ejecutarlo e instalar toda la configuración descrita en él.
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/puppet/h2-img4.png "Generar contraseña de usuario")
