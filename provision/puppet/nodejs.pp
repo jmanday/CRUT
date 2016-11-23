@@ -1,12 +1,12 @@
-#Crear nuevo usuario
+#Usuario ubuntu
 
-user { 'usuario':
+user { 'ubuntu':
   ensure  => 'present',
   password => '$1$2oW09qoG$Npfy2oYEwO0WQAv33k3TN1/', #Clave generada con openssl
-  comment => ‘Creación de nuevo usuario’,
+  comment => 'Creación de nuevo usuario',
   gid     => '100',
   groups  => ['sudo', 'audio', 'src', 'video'],
-  home    => '/home/usuario',
+  home    => '/home/ubuntu’,
   shell   => '/bin/bash',
   uid     => '1002',
   managehome => yes,
