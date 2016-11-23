@@ -107,7 +107,7 @@ En este fichero hemos declarado un grupo para tener clasificadas las diferentes 
 Al indicarle el nombre del grupo solo le hará *ping* a las máquinas definidas dentro de ese grupo, en este caso sólo tenemos una y se puede ver como la respuesta ha tenido éxito.
  
 
-### Ficheros yaml
+### Ficheros yaml para la instancia AMI
 
 Con la máquina remota ejecutándose y la herramienta **ansible** configurada para poder conectarse a ella, lo siguiente será definir el provisionamiento a través de los ficheros **yaml**. Para este caso he definido dos archivos de provisionamiento, un primer archivo [updateSys.yml](https://github.com/jmanday/CRUT/blob/provisionamiento/ansible/playbooks/ami/updateSys.yml) para actualizar todos los paquetes del sistema, y un segundo fichero [node.yml](https://github.com/jmanday/CRUT/blob/provisionamiento/ansible/playbooks/ami/node.yml) para instalar todo el entorno **nvm** junto con **npm** y **node**.
  
@@ -126,7 +126,7 @@ Vemos que todo se ha realizado correctamente una vez que se han desarrollado tod
    ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/ansible/h2-img23.png "Prueba de ansible a la instancia remota")
    
 
-### Ficheros yaml
+### Ficheros yaml para la instancia Ubuntu 
 
 Para el provisionamiento de esta instancia se han definido también dos ficheros **yaml**. El primero de ellos [updateSys.yml](https://github.com/jmanday/CRUT/blob/provisionamiento/ansible/playbooks/ubuntu/updateSys.yml), como en el caso anterior esta orientado a la actualización del sistema y los paquetes del mismo. Con el segundo fichero [mysql.yml](https://github.com/jmanday/CRUT/blob/provisionamiento/ansible/playbooks/ubuntu/mysql.yml), provisionamos a la máquina con el microservicio de **MySQL** y también con **git**
 
@@ -144,6 +144,9 @@ Una vez realizado el provisionamiento de las máquinas con **Ansible**, se ha pr
 Es una herramienta para la gestión de la configuración de código abierto escrita en Ruby. Se compone de un lenguaje declarativo a base de módulo y clases para definir la configuración del sistema. Funciona en las distribuciones de Linux así como en múltiples sistemas Unix.
 
 Al igual que el resto de sistemas de provisionamiento, **Puppet** se basa en la compilación de ficheros que definen una estructura para los paquetes y dependencias que se desplegarán en la instancia remota.
+
+
+### Fichero PP para la instancia AMI 
 
 Lo siguiente será definir el fichero de provisionamiento para la instancia de AMI, es decir, para desplegar todo el entorno necesario en la máquina servidor de la API REST. En el se indicarán todas las dependencias y paquetes necesarios.
 
@@ -166,10 +169,14 @@ Con el siguiente comando se instalarán todas las dependencias referenciadas en 
 
 ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/puppet/h2-img9.png "Generar contraseña de usuario")
 
+### Prueba de puppet sobre la instancia AMI
 
 Probamos que se han instaldo las dependencias y paquetes correctamente.
 
 ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/puppet/h2-img10.png "Generar contraseña de usuario")
+
+
+### Fichero PP para la instancia Ubuntu 
 
 Para la instancia remota Ubuntu que contendrá el microservicio de MySQL se seguirán los mismos pasos para la instalación. Una vez realizada se definirá el fichero que definirá la estructura de paquetes y dependecias a desplegar en dicha instancia y se copiará en la máquina remota para su posterior instalación, como se muestra en las siguientes imágenes.
 
@@ -181,6 +188,8 @@ Para la instancia remota Ubuntu que contendrá el microservicio de MySQL se segu
 
 ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/puppet/h2-img3.png "Instalar mysql")
 
+
+### Prueba de puppet sobre la instancia Ubuntu
 
 Por último lanzamos el servicio de mysql para comprobar que todo se ha realizado correctamente.
 
