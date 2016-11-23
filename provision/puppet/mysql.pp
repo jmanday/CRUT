@@ -1,0 +1,3 @@
+#Instalar mysql
+
+class { "mysql": }
