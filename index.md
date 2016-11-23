@@ -51,11 +51,11 @@ Por ahora se va a utilizar un sólo microservicio basado en MySQL donde se van a
 Para la realización de este proceso voy a utilizar dos sistemas de provisionamiento diferentes sobre dos instancias de máquinas virtuales. La primera instancia será provisonada mediante [Ansible](https://www.ansible.com/), y para la segunda se utilizará [Puppet](https://puppet.com/).
 
 
-### Definir instancias remotas
+###Definir instancias remotas
 
 Con el sistema de provisionamiento ya instalado, lo siguiente es crear la instancia remota. Para la creación y gestión de las instancias remotas se va a hacer uso de [Amazon Web Services](https://aws.amazon.com/es/), uno de los principales IaaS del mercado y que mejores servicios ofrece en los que muchas empresas tienen alojada toda su infraestructura. Se aprovechará también la licencia como estudiante que ofrecen para disfrutar de las ventajas que tiene. 
 
-#### Definición de instancia AMI
+####Definición de instancia AMI
 
 Esta instancia se va a crear en base a una **AMI**(Amazon Machine Image) como se puede visualizar. Esta imagen de Linux viene con algunos paquetes básicos instalados como Python, el cual es necesario para poder utilizar **Ansible**.
 
@@ -112,7 +112,7 @@ Para comprobar que la instancia EC2 ha sido creada y se está ejecutando se esta
 ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/ansible/h2-img14.png "Creación Instancia Remota")
 
 
-#### Definición de instancia Ubuntu
+####Definición de instancia Ubuntu
  
 Se han seguido los mismos pasos que en la creación de la instancia anterior, con la salvedad de que el tipo de imagen utilizada para este mircorservicio es un **Ubuntu Server**. Va a tener las mismas caracterísitcas, prestaciones, grupo de seguridad y clave pem que la máquina para el servidor.
 
@@ -122,7 +122,7 @@ Se han seguido los mismos pasos que en la creación de la instancia anterior, co
   
    ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/ansible/h2-img21.png "Definición instancia")
    
-###Provionar instancias remotas
+### Provionar instancias remotas
 
 ### Provisionamiento 1: ansible
 
