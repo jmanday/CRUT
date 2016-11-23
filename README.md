@@ -127,6 +127,7 @@ Vemos que todo se ha realizado correctamente una vez que se han desarrollado tod
    
 
 ### Ficheros yaml
+
 Para el provisionamiento de esta instancia se han definido también dos ficheros **yaml**. El primero de ellos [updateSys.yml](https://github.com/jmanday/CRUT/blob/provisionamiento/ansible/playbooks/ubuntu/updateSys.yml), como en el caso anterior esta orientado a la actualización del sistema y los paquetes del mismo. Con el segundo fichero [mysql.yml](https://github.com/jmanday/CRUT/blob/provisionamiento/ansible/playbooks/ubuntu/mysql.yml), provisionamos a la máquina con el microservicio de **MySQL** y también con **git**
 
    ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/ansible/h2-img24.png "Fichero de provisionamiento para actualizar el sistema")
@@ -137,3 +138,24 @@ Como se ha podido comprobar este primer aprovisionamiento mediante **Ansible** s
 
 
 ### Provisionamiento 2: puppet
+
+Una vez realizado el provisionamiento de las máquinas con **Ansible**, se ha procedido a realizar el mismo tipo de provisionamiento pero esta vez usando otra herramienta diferente pero del mismo entorno como es [Puppet](https://puppet.com/). 
+
+Es una herramienta para la gestión de la configuración de código abierto escrita en Ruby. Se compone de un lenguaje declarativo a base de módulo y clases para definir la configuración del sistema. Funciona en las distribuciones de Linux así como en múltiples sistemas Unix.
+
+Al igual que el resto de sistemas de provisionamiento, **Puppet** se basa en la compilación de ficheros que definen una estructura para los paquetes y dependencias que se desplegarán en la instancia remota.
+
+Ante de definir dicho fichero es necesario crear una contraseña de usuario para linux en **Puppet**, para ello se ha utilizado la herramienta **openSSL** como se muestra a continuación.
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/puppet/h2-img1.png "Generar contraseña de usuario")
+
+
+Lo siguiente será definir el fichero de provisionamiento para la instancia de AMI, es decir, para desplegar todo el entorno necesario en la máquina servidor de la API REST. En el se indicarán todas las dependencias y paquetes necesarios.
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/puppet/h2-img2.png "Generar contraseña de usuario")
+
+
+En la máquina remota AMI será necesario instalar **Puppet**, por lo que procedemos a ello.
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/puppet/h2-img3.png "Generar contraseña de usuario")
+

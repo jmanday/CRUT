@@ -22,7 +22,7 @@ class { 'nvm':
   install_node => ‘6.9.1’,
 }
 
-#Instalar ppm
+#Instalar npm
 
 package { 'forever':
   ensure   => 'present',
