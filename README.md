@@ -135,3 +135,6 @@ Para el provisionamiento de esta instancia se han definido también dos ficheros
    ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/ansible/h2-img25.png "Fichero de provisionamiento para instalar MySQL y git")
 
 Como se ha podido comprobar este primer aprovisionamiento mediante **Ansible** se ha realizado de manera correcta, desplegando a cada instancia remota las herramientas, paquetes y ficheros necesarios para el proyecto.
+
+
+### Provisionamiento 2: puppet
