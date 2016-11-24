@@ -6,4 +6,4 @@
  
   tasks:
     - name: Actualizar todos los paquetes
-yum: name=* state=latest update_cache=yes
+      yum: name=* state=latest update_cache=yes

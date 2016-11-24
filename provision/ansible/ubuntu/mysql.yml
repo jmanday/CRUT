@@ -16,4 +16,4 @@
         state: started
         enabled: true
     - name: Instalar git
-apt: pkg=git state=latest
+      apt: pkg=git state=latest
