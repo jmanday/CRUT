@@ -70,3 +70,5 @@ Para probar el mismo provisionamiento pero con otra herramienta diferente se ha 
 ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/puppet/h2-img5.png "Puppet-Fichero Provisionamiento AMI")
 
 ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/puppet/h2-img11.png "Puppet-Fichero Provisionamiento Ubuntu")
+
+En el siguiente [enlace](https://github.com/NestorsImagination/Sample-Multiplayer-Shooter/issues/13) se puede ver la supervisión del provisionamiento de un compañero.
