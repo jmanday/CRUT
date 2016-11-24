@@ -1,0 +1,9 @@
+# updateSys.yml
+---
+- hosts: instance-server-AMI
+  become: yes
+  remote_user: ec2-user
+ 
+  tasks:
+    - name: Actualizar todos los paquetes
+yum: name=* state=latest update_cache=yes
