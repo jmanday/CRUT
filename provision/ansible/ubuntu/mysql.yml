@@ -1,0 +1,19 @@
+# mysql.yml
+---
+- hosts: ubuntuMySQL
+  become: yes
+  remote_user: ubuntu
+ 
+  tasks:
+    - name: Instalar MySQL
+      apt: name={{ item }} update_cache=yes cache_valid_time=3600 state=present
+      with_items:
+        - python-mysqldb
+        - mysql-server
+    - name: Ejecutar el servicio MySQL 
+      service: 
+        name: mysql 
+        state: started
+        enabled: true
+    - name: Instalar git
+      apt: pkg=git state=latest
