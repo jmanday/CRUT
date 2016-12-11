@@ -1,0 +1,39 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# All Vagrant configuration is done below. The "2" in Vagrant.configure
+# configures the configuration version (we support older styles for
+# backwards compatibility). Please don't change it unless you know what
+# you're doing.
+Vagrant.configure("2") do |config|
+
+  config.vm.box = "ubuntu-mean-aws"
+
+  config.vm.provider :aws do |aws, override|
+  
+	override.ssh.username = "ubuntu"
+    override.ssh.private_key_path = "~/.ssh/instance-ami.pem"
+    override.vm.box_url = "../local/ubuntu1204_mean.box"
+
+
+    aws.region_config "us-west-2b" do |region|
+
+      aws.ami = "ami-7747d01e"
+      region.instance_type = "t2.micro"
+      region.availability_zone = "us-west-2b"
+      region.instance_ready_timeout = "120"
+
+      region.keypair_name = "instance-ami"
+      region.security_groups = "launch-wizard-3"
+
+	end
+	
+  end
+  
+  config.vm.provision "ansible" do |ansible|
+  
+  	ansible.playbook = "playbook.yml"   
+
+  end
+
+end

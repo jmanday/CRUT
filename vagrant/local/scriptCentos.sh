@@ -15,4 +15,4 @@ sudo npm install -g express
 # Installing MySQL and it's dependencies, Also, setting up root password for MySQL as it will prompt to enter the password during installation
 sudo debconf-set-selections <<< 'mysql-server-5.5 mysql-server/root_password password root'
 sudo debconf-set-selections <<< 'mysql-server-5.5 mysql-server/root_password_again password root'
-sudo apt-get -y install mysql-server
+sudo apt-get -y install mysql-server mysql-client-core-5.5
