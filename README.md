@@ -123,14 +123,14 @@ En la última instrucción del fichero es donde se pasa a la parte del provision
  
   	  tasks:
     	  - name: Actualizar paquetes
-      	 	 apt: pkg=aptitude state=present
+      	 	apt: pkg=aptitude state=present
     	  - name: Instalar MySQL
-      		 apt: name={{ item }} update_cache=yes cache_valid_time=3600 state=present
+      		apt: name={{ item }} update_cache=yes cache_valid_time=3600 state=present
       		 with_items:
         		- python-mysqldb
         		- mysql-server
     	  - name: Ejecutar el servicio MySQL 
-      		 service: 
+      		service: 
         		name: mysql 
         		state: started
         		enabled: true
@@ -190,3 +190,37 @@ Ahora toca hacer lo mismo pero con el fichero **Vagrantfile** definido para la m
     		ansible.playbook = "playbook-Node.yml"
   		end
 	end
+
+Con el siguiente contenido en el fichero de provisionamiento para **Ansible**:
+
+	- hosts: azurevagrant-Node
+  	  become: yes
+  	  remote_user: vagrant
+ 
+  	  tasks:
+   		   - name: Actualizar todos los paquetes
+	  		 apt:
+        		update_cache: yes
+	  
+    	   - name: Instalar dependencias
+      		 apt: name={{ item }} state=latest
+      			with_items:
+        			- git
+        			- curl
+        			- wget
+              
+    	   - name: Instalar npm, nvm y  node
+      		 get_utl: url=https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh/.install.sh
+      		 script: install.sh
+	  		 command: nvm install v6
+
+
+Ejecutamos el comando de **Vagrant** para levantar la máquina virtual en proveedor de **Azure**:
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito3/h3-img19.png)
+
+
+Como se hizo con la anterior máquina virtual, en la imagen de debajo se muestra la comprobación de que todo se ha realizado correctamente:
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito3/h3-img20.png)
+
