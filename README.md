@@ -74,9 +74,9 @@ Para la primera máquina se ha definido el siguiente Vagrantfile:
 
 	Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   		config.vm.box     = 'azure'
-  		config.vm.box_url = 'https://github.com/msopentech/	vagrant-azure/raw/master/dummy.box'
+  		config.vm.box_url = 'https://github.com/msopentech/vagrant-azure/raw/master/dummy.box'
 
-  		config.ssh.username         = 'vagrant'
+  		config.ssh.username = 'vagrant'
 
   		config.vm.provider :azure do |azure|
   			#full path to pem file
@@ -155,7 +155,7 @@ Ahora toca hacer lo mismo pero con el fichero **Vagrantfile** definido para la m
   		config.vm.box     = 'azure'
   		config.vm.box_url = 'https://github.com/msopentech/vagrant-azure/raw/master/dummy.box'
 
-  		config.ssh.username         = 'vagrant'
+  		config.ssh.username = 'vagrant'
   
   		config.vm.provider :azure do |azure|
   			#full path to pem file
