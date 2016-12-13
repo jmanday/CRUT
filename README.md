@@ -78,11 +78,11 @@ En el siguiente [enlace](https://github.com/NestorsImagination/Sample-Multiplaye
 
 Se ha realizado una orquestación de tres máquinas virtuales en local y otra de dos máquinas virtuales en cloud.
 
-Para la [orquestación local](https://jmanday.github.io/CRUT/index#orquestacion-en-local) de las máquinas virtuales se ha utilizado **Virtualbox** como proveedor para definir una máquina con centos, otra con ubuntu/trusty de 64 bits y una tercerca con ubuntu/precise de 32 bits, todas ellas provisionadas mediante **Ansible** como se muestra en la siguiente imagen:
+Para la [orquestación local](https://jmanday.github.io/CRUT/index#orquestación-en-local) de las máquinas virtuales se ha utilizado **Virtualbox** como proveedor para definir una máquina con centos, otra con ubuntu/trusty de 64 bits y una tercerca con ubuntu/precise de 32 bits, todas ellas provisionadas mediante **Ansible** como se muestra en la siguiente imagen:
 
-![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/puppet/h3-img10.png)
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito3/h3-img10.png)
 
 
-Para la [orquestación cloud](https://jmanday.github.io/CRUT/index#orquestacion-en-cloud) de las máquinas virtuales se ha utilizado **Azure** como proveedor para definir dos máquinas con ubuntu y provisionadas a través de **Ansible** una con **MySQL** y otra con **Node**.
+Para la [orquestación cloud](https://jmanday.github.io/CRUT/index#orquestación-en-cloud) de las máquinas virtuales se ha utilizado **Azure** como proveedor para definir dos máquinas con ubuntu y provisionadas a través de **Ansible** una con **MySQL** y otra con **Node**.
 
-![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/puppet/h3-img21.png)
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito3/h3-img21.png)
