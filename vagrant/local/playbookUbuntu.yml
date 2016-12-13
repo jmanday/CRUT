@@ -1,4 +1,4 @@
-- hosts: ubuntu.precise, ubuntu.trusty
+- hosts: ubuntu32.vm, ubuntu64.vm
  
   tasks:
     - name: Actualizar paquetes

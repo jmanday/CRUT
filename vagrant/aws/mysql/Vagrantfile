@@ -1,0 +1,42 @@
+VAGRANTFILE_API_VERSION = '2'
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.vm.box     = 'azure'
+  config.vm.box_url = 'https://github.com/msopentech/vagrant-azure/raw/master/dummy.box'
+
+  config.ssh.username         = 'vagrant'
+
+  config.vm.provider :azure do |azure|
+  	#full path to pem file
+	azure.mgmt_certificate = File.expand_path('~/.ssh/azurevagrant.key')
+    azure.mgmt_endpoint = 'https://management.core.windows.net'
+    
+    #to get this run: azure account list
+    azure.subscription_id = ENV['AZURE_SUBSCRIPTION_ID']
+
+	azure.storage_acct_name = '' # optional
+	
+	#to get this run: azure vm image list	
+	azure.vm_image = 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_2-LTS-amd64-server-20150506-en-us-30GB'
+    
+    azure.vm_user = 'vagrant' # defaults to 'vagrant' if not provided
+    azure.vm_password = 'vagrant123#@!' # min 8 characters. should contain a lower case letter, an uppercase letter, a number and a special character
+
+	azure.vm_name = 'azurevagrant-mysql' # max 15 characters. contains letters, number and hyphens. can start with letters and can end with letters and numbers
+    azure.cloud_service_name = '' # same as vm_name. leave blank to auto-generate
+
+    ##to get this run: azure vm location list
+    azure.vm_location = 'North Europe'
+
+    azure.tcp_endpoints = '3389:53389' # opens the Remote Desktop internal port that listens on public port 53389. Without this, you cannot RDP to a Windows VM.
+    azure.winrm_https_port = 5986
+	azure.ssh_port = '22'
+	
+    azure.winrm_transport = %w(https)
+  end
+  
+  config.vm.provision "ansible" do |ansible|
+    ansible.playbook = "playbook-MySQL.yml"
+  end
+  
+end

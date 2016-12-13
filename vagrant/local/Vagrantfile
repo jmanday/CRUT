@@ -1,43 +1,24 @@
-# -*- mode: ruby -*-
-# vi: set ft=ruby :
-
-# All Vagrant configuration is done below. The "2" in Vagrant.configure
-# configures the configuration version (we support older styles for
-# backwards compatibility). Please don't change it unless you know what
-# you're doing.
 Vagrant::Config.run do |config|
   config.vm.define :centos do |centos|
           centos.vm.box       = "centos65-x86_64"
           centos.vm.box_url   = "https://github.com/2creatives/vagrant-centos/releases/download/v6.5.3/centos65-x86_64-20140116.box"
           centos.vm.host_name = "centos.vm"
           centos.vm.network :hostonly, "192.168.56.11"
-          #centos.vm.provision :shell, :path => "scriptCentos.sh"
-  end
-  
-  config.vm.provision "ansible" do |ansible|
-  
-  	ansible.playbook = "playbookCentos.yml"   
-
+          centos.vm.provision :shell, :path => "scriptCentos.sh"
   end
 
   config.vm.define :ubuntu64 do |ubuntu64|
           ubuntu64.vm.box       = "ubuntu/trusty64"
           ubuntu64.vm.host_name = "ubuntu64.vm"
           ubuntu64.vm.network :hostonly, "192.168.56.12"
-          #ubuntu.trusty.vm.provision :shell, :path => "scriptUbuntu.sh"
+          ubuntu64.vm.provision :shell, :path => "scriptUbuntu.sh"
   end
   
   config.vm.define :ubuntu32 do |ubuntu32|
           ubuntu32.vm.box       = "ubuntu/precise32"
           ubuntu32.vm.host_name = "ubuntu32.vm"
           ubuntu32.vm.network :hostonly, "192.168.56.13"
-          #ubuntu.precise.vm.provision :shell, :path => "scriptUbuntu.sh"
-  end
-  
-  config.vm.provision "ansible" do |ansible|
-  
-  	ansible.playbook = "playbookUbuntu.yml"   
-
+          ubuntu32.vm.provision :shell, :path => "scriptUbuntu.sh"
   end
   
 # End Configuration

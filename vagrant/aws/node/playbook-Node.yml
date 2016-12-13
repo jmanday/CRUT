@@ -1,0 +1,22 @@
+# playbook-Node.yml
+---
+- hosts: azurevagrant-Node
+  become: yes
+  remote_user: vagrant
+ 
+  tasks:
+   	- name: Actualizar todos los paquetes
+	  apt:
+        update_cache: yes
+	  
+    - name: Instalar dependencias
+      apt: name={{ item }} state=latest
+      with_items:
+        - git
+        - curl
+        - wget
+              
+    - name: Instalar npm, nvm y  node
+      get_utl: url=https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh/.install.sh
+      script: install.sh
+	  command: nvm install v6
