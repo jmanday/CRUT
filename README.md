@@ -230,4 +230,4 @@ Para finalizar con la orquestación de las máquinas virtuales en cloud, vamos a
 ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito3/h3-img21.png)
 
 
-Como se ha podido comprobar todo el proceso de orquestación en cloud se ha realizado satisfactoriamente y las máquinas virtuales están correctamente creadas y provisionadas, asi como disponibles para su uso
+Como se ha podido comprobar todo el proceso de orquestación en cloud se ha realizado satisfactoriamente y las máquinas virtuales están correctamente creadas y provisionadas, asi como disponibles para su uso.
