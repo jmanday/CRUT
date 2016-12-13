@@ -250,7 +250,7 @@ Lo primero en realizar es instalar **Vagrant** en la máquina local para poder t
 
 ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito3/h3-img1.png)
 
-### Orquestación en local
+### Orquestando en local
 Esta primera orquestación se va a realizar en local, por lo que se instalará [VirtualBox](https://www.virtualbox.org/) como proveedor y se podrá comprobar a través del mismo si **Vagrant** ha creado correctamente las tres máquinas virtuales.
 
 Una vez que se ha instalado la herramienta lo siguiente es definir el fichero **Vagrantfile** mediante el cual se definirán las máquinas virtuales. Para este caso se orquestarán tres máquinas virtuales con diferentes sistemas operativos; una con **Centos** y las dos restantes con **Ubuntu**, una de ellas con la versión **Trusty** de 64 bits, y la otra con la versión **Precise** de 32 bits.
@@ -294,7 +294,7 @@ Además de la anterior comprobación, vamos a realziar una conexión vía ssh co
 Como muestran las imágenes, la orquestación de las máquinas virtuales en local se ha realizado correctamente.
 
 
-### Orquestación en cloud
+### Orquestando en cloud
 Para realizar la orquestación de varias máquinas virtuales en cloud se va a utilizar el Iaas de [Microsoft Azure](https://azure.microsoft.com/es-es/), aprovechando el la subscripción gratis que regalan durante un mes.
 
 Se definirán dos máquinas virtuales con Ubuntu de 64 bits, una de ellas será provisionada con [MySQL](https://www.mysql.com/) y la otra con [Node](https://nodejs.org/es/).
