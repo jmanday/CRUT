@@ -224,3 +224,10 @@ Como se hizo con la anterior máquina virtual, en la imagen de debajo se muestra
 
 ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito3/h3-img20.png)
 
+
+Para finalizar con la orquestación de las máquinas virtuales en cloud, vamos a acceder al portal web de **Azure** para comprobar realmente que las máquinas se ha creado y se encuentran definidas en la plataforma:
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito3/h3-img21.png)
+
+
+Como se ha podido comprobar todo el proceso de orquestación en cloud se ha realizado satisfactoriamente y las máquinas virtuales están correctamente creadas y provisionadas, asi como disponibles para su uso
