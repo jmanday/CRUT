@@ -1,0 +1,9 @@
+- hosts: centos.vm
+ 
+  tasks:
+    - name: Instalar dependencias
+      yum: name={{ item }} state=latest
+      with_items:
+        - git
+        - curl
+        - wget
