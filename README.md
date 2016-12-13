@@ -70,3 +70,20 @@ Para probar el mismo provisionamiento pero con otra herramienta diferente se ha 
 ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/puppet/h2-img5.png "Puppet-Fichero Provisionamiento AMI")
 
 ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/puppet/h2-img11.png "Puppet-Fichero Provisionamiento Ubuntu")
+
+
+##Vagrant
+
+Se ha realizado una orquestación de tres máquinas virtuales en local y otra de dos máquinas virtuales en cloud.
+
+Para la [orquestación local](https://github.com/jmanday/CRUT/tree/vagrant#orquestaci%C3%B3n-en-local) de las máquinas virtuales se ha utilizado **Virtualbox** como proveedor para definir una máquina con centos, otra con ubuntu/trusty de 64 bits y una tercerca con ubuntu/precise de 32 bits, todas ellas provisionadas mediante **Ansible** como se muestra en la siguiente imagen:
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito3/h3-img10.png)
+
+
+Para la [orquestación cloud](https://github.com/jmanday/CRUT/tree/vagrant#orquestaci%C3%B3n-en-cloud) de las máquinas virtuales se ha utilizado **Azure** como proveedor para definir dos máquinas con ubuntu y provisionadas a través de **Ansible** una con **MySQL** y otra con **Node**.
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito3/h3-img21.png)
+
+
+En el siguiente [enlace](https://github.com/NestorsImagination/Sample-Multiplayer-Shooter/issues/13) se puede ver la supervisión del provisionamiento de un compañero.
