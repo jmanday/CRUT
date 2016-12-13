@@ -146,3 +146,5 @@ Finalizado el proceso pasamos a comprobar que todo se ha realizado correctamente
 
 
 Como muestra la anterior imagen anterior la creación de la máquina virtual para **MySQL** y su provisionamiento se han realizado correctamente.
+
+Ahora toca hacer lo mismo pero con el fichero **Vagrantfile** definido para la máquina virtual con **node** con su fichero de provionamiento correspondiente para esas dependencias.
