@@ -86,3 +86,6 @@ Para la [orquestación local](https://jmanday.github.io/CRUT/index#orquestando-e
 Para la [orquestación cloud](https://jmanday.github.io/CRUT/index#orquestando-en-cloud) de las máquinas virtuales se ha utilizado **Azure** como proveedor para definir dos máquinas con ubuntu y provisionadas a través de **Ansible** una con **MySQL** y otra con **Node**.
 
 ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito3/h3-img21.png)
+
+En el siguiente [enlace](https://github.com/mortega87/ProyectoCC-16-17/issues/15) se puede ver la supervisión del provisionamiento de un compañero.
+
