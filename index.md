@@ -307,7 +307,7 @@ Una vez que se ha instalado el plugin correspondiente de manera exitosa, lo sigu
 
 Antes de comenzar a definir los ficheros de **Vagrant** es necesario añadir la "caja" (**box**) base a partir de la cual se crearán las dos máquinas virtuales:
 
-![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito3/h3-img15.png)
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito3/h3-img16.png)
 
 Con la imagen base ya añadida al vagrant pasamos a definir los ficheros **Vagrantfile** para cada una de las máquinas virtuales que aunque serán muy parecidos y compartiran los mismos recursos a nivel de certificados de seguridad para la conexión con la máquina local, se distinguen en algunos parámetros.
 
