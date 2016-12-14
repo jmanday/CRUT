@@ -316,13 +316,13 @@ Para la primera máquina se ha definido el siguiente Vagrantfile:
 	VAGRANTFILE_API_VERSION = '2'
 
 	Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  		config.vm.box     = 'azure'
-  		config.vm.box_url = 'https://github.com/msopentech/	vagrant-azure/raw/master/dummy.box'
+	config.vm.box = 'azure'
+	config.vm.box_url = 'https://github.com/msopentech/	vagrant-azure/raw/master/dummy.box'
 
-  		config.ssh.username         = 'vagrant'
+	config.ssh.username = 'vagrant'
 
-  		config.vm.provider :azure do |azure|
-  			#full path to pem file
+	config.vm.provider :azure do |azure|
+			#full path to pem file
 			azure.mgmt_certificate = File.expand_path('~/.ssh/azurevagrant.key')
     		azure.mgmt_endpoint = 'https://management.core.windows.net'
     
