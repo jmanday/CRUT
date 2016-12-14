@@ -316,12 +316,12 @@ Para la primera máquina se ha definido el siguiente Vagrantfile:
 	VAGRANTFILE_API_VERSION = '2'
 
 	Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-	config.vm.box = 'azure'
-	config.vm.box_url = 'https://github.com/msopentech/	vagrant-azure/raw/master/dummy.box'
+		config.vm.box = 'azure'
+		config.vm.box_url = 'https://github.com/msopentech/	vagrant-azure/raw/master/dummy.box'
 
-	config.ssh.username = 'vagrant'
+		config.ssh.username = 'vagrant'
 
-	config.vm.provider :azure do |azure|
+		config.vm.provider :azure do |azure|
 			#full path to pem file
 			azure.mgmt_certificate = File.expand_path('~/.ssh/azurevagrant.key')
     		azure.mgmt_endpoint = 'https://management.core.windows.net'
@@ -348,12 +348,11 @@ Para la primera máquina se ha definido el siguiente Vagrantfile:
 			azure.ssh_port = '22'
 	
     		azure.winrm_transport = %w(https)
-  		end
-  
-  		config.vm.provision "ansible" do |ansible|
+    	end
+    
+    	config.vm.provision "ansible" do |ansible|
     		ansible.playbook = "playbook-MySQL.yml"
-  		end
-  
+    	end
 	end
 	
 Entre algunos de los parámetros de la configuración se encuentra el **Identificador de la subscripción** de azure, la **localización** de la máqina, el puerto ssh, el certificado, etc.
@@ -361,10 +360,10 @@ Entre algunos de los parámetros de la configuración se encuentra el **Identifi
 En la última instrucción del fichero es donde se pasa a la parte del provisionamiento con **Ansible** usando para ello el siguiente dichero yml definido para esta instancia:
 
 	- hosts: azurevagrant-mysql
-  	  become: yes
-  	  remote_user: vagrant
- 
-  	  tasks:
+	  become: yes
+	  remote_user: vagrant
+	  
+	  tasks:
     	  - name: Actualizar paquetes
       	 	apt: pkg=aptitude state=present
     	  - name: Instalar MySQL
@@ -395,13 +394,13 @@ Ahora toca hacer lo mismo pero con el fichero **Vagrantfile** definido para la m
 	VAGRANTFILE_API_VERSION = '2'
 
 	Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  		config.vm.box     = 'azure'
-  		config.vm.box_url = 'https://github.com/msopentech/vagrant-azure/raw/master/dummy.box'
+		config.vm.box = 'azure'
+		config.vm.box_url = 'https://github.com/msopentech/vagrant-azure/raw/master/dummy.box'
 
-  		config.ssh.username         = 'vagrant'
-  
-  		config.vm.provider :azure do |azure|
-  			#full path to pem file
+		config.ssh.username = 'vagrant'
+		config.vm.provider :azure do |azure|
+		
+			#full path to pem file
 			azure.mgmt_certificate = File.expand_path('~/.ssh/azurevagrant.key')
     		azure.mgmt_endpoint = 'https://management.core.windows.net'
     
@@ -427,21 +426,21 @@ Ahora toca hacer lo mismo pero con el fichero **Vagrantfile** definido para la m
 			azure.ssh_port = '22'
 	
     		azure.winrm_transport = %w(https)
-  		end
-  
-  		config.vm.provision "ansible" do |ansible|
+    	end
+    	
+    	config.vm.provision "ansible" do |ansible|
     		ansible.playbook = "playbook-Node.yml"
-  		end
+    	end
 	end
 
 Con el siguiente contenido en el fichero de provisionamiento para **Ansible**:
 
 	- hosts: azurevagrant-Node
-  	  become: yes
-  	  remote_user: vagrant
- 
-  	  tasks:
-   		   - name: Actualizar todos los paquetes
+	  become: yes
+	  remote_user: vagrant
+	  
+	  tasks:
+	  		- name: Actualizar todos los paquetes
 	  		 apt:
         		update_cache: yes
 	  
