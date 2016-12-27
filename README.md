@@ -62,5 +62,27 @@ El fichero **Dockerfile** presenta la siguiente estructura:
 como se puede apreciar esta imagen creada a partir del anterior *Dockerfile* viene con el entorno de node instalado, asi como git. Se clona el repositorio del proyecto, instala todas las dependencias necesarias para el mismo y lo ejecuta, quedando el servidor en escucha por el puerto 3000.
 
 Una vez definido el fichero *Dockerfile* nos crearemos la imagen y la almacenaremos en un repositorio creado en [Docker Hub](https://hub.docker.com/) llamado **jmanday/crut**.	
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito4/h4-img6.png)
 
- 
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito4/h4-img7.png)
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito4/h4-img8.png)
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito4/h4-img9.png)
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito4/h4-img10.png)
+
+
+Como se ha podido apreciar en las imágenes anteriores, la imagen se ha creado correctamente en base el fichero *Dockerfile* y ha sido alojada en el repositorio de imagenes de docker para su uso general, por lo que si alguien necesita esa imagen con esos mismos paquetes solo tiene que buscarla.
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito4/h4-img11.png)
+
+
+Lo próximo será crear el contenedor en base a esa iamgen.
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito4/h4-img12.png)
+
+
+Se puede ver como los dos contenedores han sido creados correctamente en la siguiente imagen:
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito4/h4-img13.png)
