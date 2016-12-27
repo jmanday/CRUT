@@ -56,7 +56,7 @@ El fichero **Dockerfile** presenta la siguiente estructura:
 	#Bundle app source
 	#COPY . /usr/src/app
 	
-	EXPOSE 3010
+	EXPOSE 3000
 	CMD [ "npm", "start" ]
 
 como se puede apreciar esta imagen creada a partir del anterior *Dockerfile* viene con el entorno de node instalado, asi como git. Se clona el repositorio del proyecto, instala todas las dependencias necesarias para el mismo y lo ejecuta, quedando el servidor en escucha por el puerto 3000.
