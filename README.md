@@ -56,7 +56,7 @@ El fichero **Dockerfile** presenta la siguiente estructura:
 	#Bundle app source
 	#COPY . /usr/src/app
 	
-	EXPOSE 3000
+	EXPOSE 3010
 	CMD [ "npm", "start" ]
 
 como se puede apreciar esta imagen creada a partir del anterior *Dockerfile* viene con el entorno de node instalado, asi como git. Se clona el repositorio del proyecto, instala todas las dependencias necesarias para el mismo y lo ejecuta, quedando el servidor en escucha por el puerto 3000.
@@ -83,6 +83,28 @@ Lo próximo será crear el contenedor en base a esa iamgen.
 ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito4/h4-img12.png)
 
 
+En la creación del contenedor podemos ver como aparecen dos flags, **-p** para indicar el puerto público por el que escuchará la instancia de Amazon y a cual se dirigirá del contenedor (en este caso el que esta escuchando el express), y **--link**, que sirve para crear un enlace a otro contenedor para su posterior comunicación, como se verá en el siguiente apartado.
+
+
 Se puede ver como los dos contenedores han sido creados correctamente en la siguiente imagen:
 
 ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito4/h4-img13.png)
+
+
+##Enlazar los contenedores
+Una vez creados ambos contenedores, lo siguiente es comunicarlos, ya que en uno se encuentra la base de datos y en otro el servidor web.
+
+Como vimos cuando creamos el contenedor del servidor web, le indicamos a través del flag **link** el enlace que se crearía hacia ese otro contenedor. Para ver que ese enlace existe comprobaremos las entradas añadidas en el fichero **/etc/hosts** del contenedor del servidor web.
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito4/h4-img14.png)
+
+
+Se puede ver en la imagen anterior como se han creado dos entradas en el fichero de */etc/hosts*, una referente al propio contenedor y otra que referencia al enlace indicado en la creación del contendor del servidor web hacia el contenedor de la base de datos. Por lo que si le hacemos un ping, responderá correctamente.
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito4/h4-img15.png)
+
+
+##Prueba
+Con los contenedores creados y enlazados, solo queda probar que todo ha ido bien y que la aplicación se ha desplegado dentro de un contenedor en una instancia de Amazon. Para ello solo basta con acceder en el navegador a la ip de la máquina y al puerto público que se indicó que escucharía para referenciarlo al del contenedor como se muestra en la imagen. 
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito4/h4-img16.png)
