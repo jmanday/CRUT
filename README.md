@@ -108,3 +108,6 @@ Se puede ver en la imagen anterior como se han creado dos entradas en el fichero
 Con los contenedores creados y enlazados, solo queda probar que todo ha ido bien y que la aplicación se ha desplegado dentro de un contenedor en una instancia de Amazon. Para ello solo basta con acceder en el navegador a la ip de la máquina y al puerto público que se indicó que escucharía para referenciarlo al del contenedor como se muestra en la imagen. 
 
 ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito4/h4-img16.png)
+
+
+La imagen [jmanda/crut](https://hub.docker.com/r/jmanday/crut/tags/) del entorno de ejecución de la aplicación se encuentra alojada en el repositorio de **Docker Hub**, por lo que esta disponible para cualquiera que necesite un entorno de ejecución con esas herramientas y dependencias.
