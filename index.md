@@ -475,7 +475,8 @@ Para finalizar con la orquestación de las máquinas virtuales en cloud, vamos a
 Como se ha podido comprobar todo el proceso de orquestación en cloud se ha realizado satisfactoriamente y las máquinas virtuales están correctamente creadas y provisionadas, asi como disponibles para su uso.
 
 
-##Docker
+## Docker
+
 Para que la realización de este hito implemente la arquitectura de microservicios en la que está basada la aplicación será necesario dos contenedores, uno de ellos basado en una imagen con mongodb para el microservicio de la base de datos, mientras que el otro estará basado en un imagen con todo el entorno de node y el proyecto.
 
 Toda la infraestructura mencionada será alojada en una máquina de Amazon como se podrá comprobar en las diferentes tareas.
@@ -488,7 +489,8 @@ Lo primero que se va a realizar es la instalación de **Docker** en la máquina 
 ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito4/h4-img2.png)
 
 
-###Primer contenedor
+### Primer contenedor
+
 Una vez instalado **docker** en la instancia de Amazon, lo siguiente es crear un contenedor con MySQL. Para este primer contendor vamos a tomar una imagen de las que ya existen en el repositorio de **docker**, ya que no es necesario definir la imagen debido a que sólo necesitará tener instalado **MongoDB**.
 
 Pasamos a ver que imagenes con **MongoDB** existen disponibles en el repositorio de **docker** con el comando *search* como se muestra en la imagen:
@@ -502,7 +504,8 @@ De las imágenes disponibles eligiremos la primera *mongo*, ya que es oficial de
 ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito4/h4-img5.png)
 
 
-###Segundo contenedor
+### Segundo contenedor
+
 Para este segundo contenedor partiremos de una imagen creada en base a un fichero *Dockerfile* que será definido a medida con todas las herramientas y dependencias necesarias para crear el entorno de ejecución de node, descargarse el repositorio del proyecto y lanzarlo dentro del propio contenedor.
 
 El fichero **Dockerfile** presenta la siguiente estructura:
@@ -566,7 +569,8 @@ Se puede ver como los dos contenedores han sido creados correctamente en la sigu
 ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito4/h4-img13.png)
 
 
-###Enlazar los contenedores
+### Enlazar los contenedores
+
 Una vez creados ambos contenedores, lo siguiente es comunicarlos, ya que en uno se encuentra la base de datos y en otro el servidor web.
 
 Como vimos cuando creamos el contenedor del servidor web, le indicamos a través del flag **link** el enlace que se crearía hacia ese otro contenedor. Para ver que ese enlace existe comprobaremos las entradas añadidas en el fichero **/etc/hosts** del contenedor del servidor web.
@@ -579,7 +583,8 @@ Se puede ver en la imagen anterior como se han creado dos entradas en el fichero
 ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito4/h4-img15.png)
 
 
-###Prueba
+### Prueba
+
 Con los contenedores creados y enlazados, solo queda probar que todo ha ido bien y que la aplicación se ha desplegado dentro de un contenedor en una instancia de Amazon. Para ello solo basta con acceder en el navegador a la ip de la máquina y al puerto público que se indicó que escucharía para referenciarlo al del contenedor como se muestra en la imagen. 
 
 ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito4/h4-img16.png)
