@@ -481,7 +481,8 @@ Para que la realización de este hito implemente la arquitectura de microservici
 
 Toda la infraestructura mencionada será alojada en una máquina de Amazon como se podrá comprobar en las diferentes tareas.
 
-###Configuración de máquina en Amazon
+### Configuración de máquina en Amazon
+
 Lo primero que se va a realizar es la instalación de **Docker** en la máquina de Amazon para poder trabajar con ella.
 
 ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito4/h4-img1.png)
@@ -540,6 +541,7 @@ El fichero **Dockerfile** presenta la siguiente estructura:
 como se puede apreciar esta imagen creada a partir del anterior *Dockerfile* viene con el entorno de node instalado, asi como git. Se clona el repositorio del proyecto, instala todas las dependencias necesarias para el mismo y lo ejecuta, quedando el servidor en escucha por el puerto 3000.
 
 Una vez definido el fichero *Dockerfile* nos crearemos la imagen y la almacenaremos en un repositorio creado en [Docker Hub](https://hub.docker.com/) llamado **jmanday/crut**.	
+
 ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito4/h4-img6.png)
 
 ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito4/h4-img7.png)
