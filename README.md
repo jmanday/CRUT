@@ -1,10 +1,12 @@
 #CRUT
 
+
 ##Descripción del problema
 
 En el ámbito de la industria 4.0 son muchos los sistemas que continúan anclados a un entorno de ejecución que les impiden escalar y mejorar su propio rendimiento.
 
 Son muchos los dispositivos, tecnologías, protocolos y software empleados en el desarrollo de un sistema de control industrial. Una de las principales funciones que se desarrollan en este ámbito esta orientada a la configuración de los dispositivos de control, los cuales necesitan de unos parámetros e información necesaria para poder realizar su cometido.
+
 
 
 ##Solución propuesta
@@ -18,6 +20,7 @@ La herramienta CRUT agiliza todo ese proceso, ya que de este modo no es necesari
 CRUT elimina las barreras existentes hasta ahora y agiliza las operaciones de configuración, haciendolas mas ligeras y expandibles.
 
 
+
 ##Arquitecura software
 
 Se han estudiado los diferentes tipos de arquitecturas software para evaluar a cual de ellas mejor se adapta la aplicación. Tras un análisis y evaluación de lo que cada una ofrece y teniendo claro lo que el proyecto necesita y cual es su comportamiento, he decidido que la arquitectura de microservicios es la que mas se adapta a las necesidades de mi producto.
@@ -25,6 +28,7 @@ Se han estudiado los diferentes tipos de arquitecturas software para evaluar a c
 Es por esto por lo que se va a utilizar una arquitectura de microservicios basada en una API REST para el desarollo de la plataforma CRUT, empleando para ello el conjunto de tecnologías que la plataforma MEAN ofrece como se muestra en el siguiente imagen:
 
 ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito1/arquitectura.png "Arquitectura Proyecto")
+
 
 
 ##Servicios, microservicios y tecnologías
@@ -40,6 +44,7 @@ Para implementar este tipo de arquitectura se va a utilizar la plataforma de ser
 El servidor será desplegado en el servicio Amazon Elastic Beanstalk, en el cual se integran todas las tecnologías necesarias para su desarrollo y funcionamiento.
 
 Por ahora se va a utilizar un sólo microservicio basado en MySQL donde se van a alojar los datos de las diferentes configuraciones de los dispotivos, y el cual correrá bajo el servicio Amazon EC2 como una máquina totalmente remota y separada del servidor.
+
 
 
 ##Provisionamiento
@@ -74,6 +79,7 @@ Para probar el mismo provisionamiento pero con otra herramienta diferente se ha 
 En el siguiente [enlace](https://github.com/NestorsImagination/Sample-Multiplayer-Shooter/issues/13) se puede ver la supervisión del provisionamiento de un compañero.
 
 
+
 ##Vagrant
 
 Se ha realizado una orquestación de tres máquinas virtuales en local y otra de dos máquinas virtuales en cloud.
@@ -89,3 +95,20 @@ Para la [orquestación cloud](https://jmanday.github.io/CRUT/index#orquestando-e
 
 En el siguiente [enlace](https://github.com/mortega87/ProyectoCC-16-17/issues/15) se puede ver la supervisión del provisionamiento de un compañero.
 
+
+
+##Docker
+
+Para implementar la arquitectura basada en microservicios que sigue el proyecto, se han creado dos contenedores en una instancia de Amazon. Uno de ellos creados a partir de una imagen de **mongo** disponible en **Docker Hub**, y otro creado en base a una [imagen](https://hub.docker.com/r/jmanday/crut/tags/) propia definida en el fichero [Dockerfile](https://hub.docker.com/r/jmanday/crut/~/dockerfile/) y subida al repositorio de docker de **Docker Hub** a través del respositorio existente en **Github** sobre el proyecto.
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito3/h4-img6.png)
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito3/h4-img7.png)
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito3/h4-img8.png)
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito3/h4-img11.png)
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito3/h4-img13.png)
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito3/h4-img10.png)
