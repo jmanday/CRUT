@@ -99,7 +99,9 @@ En el siguiente [enlace](https://github.com/mortega87/ProyectoCC-16-17/issues/15
 
 ##Docker
 
-Para implementar la arquitectura basada en microservicios que sigue el proyecto, se han creado dos contenedores en una instancia de Amazon. Uno de ellos creados a partir de una imagen de **mongo** disponible en **Docker Hub**, y otro creado en base a una [imagen](https://hub.docker.com/r/jmanday/crut/tags/) propia definida en el fichero [Dockerfile](https://hub.docker.com/r/jmanday/crut/~/dockerfile/) y subida al repositorio de docker de **Docker Hub** a través del respositorio existente en **Github** sobre el proyecto.
+Para implementar la arquitectura basada en microservicios que sigue el proyecto, se han creado dos contenedores en una instancia de Amazon. Uno de ellos creados a partir de una imagen de [mongo](https://jmanday.github.io/CRUT/index#primer-contenedor) disponible en **Docker Hub**, y otro creado con el [entorno de ejecución](https://jmanday.github.io/CRUT/index#segundo-contenedor) para el proyecto en base a una [imagen](https://hub.docker.com/r/jmanday/crut/tags/) propia definida en el fichero [Dockerfile](https://hub.docker.com/r/jmanday/crut/~/dockerfile/) y subida al repositorio de docker de **Docker Hub** a través del respositorio existente en **Github** sobre el proyecto.
+
+Los contenedores han sido [enlazados](https://jmanday.github.io/CRUT/index#enlazar-los-contenedores) para realizar la comunicación entre ellos, como se necesita en toda arquitectura basada en microservicios. Con todo montado se ha realizado la correspondiente [comprobación](https://jmanday.github.io/CRUT/index#prueba) para ver que todo se ha realizado correctamente.
 
 ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito3/h4-img6.png)
 
