@@ -116,4 +116,4 @@ Los contenedores han sido [enlazados](https://jmanday.github.io/CRUT/index#enlaz
 ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito4/h4-img10.png)
 
 
-En el siguiente [enlace](https://github.com/NestorsImagination/Sample-Multiplayer-Shooter/issues/25) se puede ver la corrección del hito de un compañero.
+En los siguientes enlaces e pueden ver la correcciones del hito 4 de los compañeros [Mario](https://github.com/mortega87/ProyectoCC-16-17/issues/21) y [Daniel](https://github.com/NestorsImagination/Sample-Multiplayer-Shooter/issues/25) .
