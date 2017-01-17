@@ -32,23 +32,12 @@ Una vez definido el fichero, ejecutamos la orden **Vagrant up** para que levante
 
 ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito3/h3-img9.png)
 
-Otra opción para crear las máquinas virtuales es mediante el proveedor, en este caso como se ha dicho antes **VirtualBox**. Para ello hay que indicarle a la orden de antes el parámetro del proveedor como se puede ver en la siguiente imagen:
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito3/h3-img22.png)
 
-![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito3/h3-img14.png)
 
 Para comprobar el correcto funcionamiento vamos a mirar en virtualbox si las tres máquinas virtuales han sido creadas:
 
 ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito3/h3-img10.png)
-
-Además de la anterior comprobación, vamos a realziar una conexión vía ssh con cada una de las máquinas virtuales para confirmar que todo esta correcto.
-
-![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito3/h3-img11.png)
-
-![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito3/h3-img12.png)
-
-![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito3/h3-img13.png)
-
-Como muestran las imágenes, la orquestación de las máquinas virtuales en local se ha realizado correctamente.
 
 
 ## Orquestando en cloud

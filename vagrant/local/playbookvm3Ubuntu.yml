@@ -1,0 +1,10 @@
+- hosts: ubuntu64-precise.vm
+ 
+  tasks:
+    - name: Actualizar paquetes
+      apt: pkg=aptitude state=present
+
+    - name: Actualizar sistema
+      apt: >
+        update_cache=yes 
+        upgrade=full

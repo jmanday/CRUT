@@ -1,25 +1,24 @@
 Vagrant::Config.run do |config|
-  config.vm.define :centos do |centos|
-          centos.vm.box       = "centos65-x86_64"
-          centos.vm.box_url   = "https://github.com/2creatives/vagrant-centos/releases/download/v6.5.3/centos65-x86_64-20140116.box"
-          centos.vm.host_name = "centos.vm"
-          centos.vm.network :hostonly, "192.168.56.11"
-          centos.vm.provision :shell, :path => "scriptCentos.sh"
+  config.vm.define "vmUbuntu1" do |vmUbuntu1|
+          vmUbuntu1.vm.box       = "ubuntu/xenial64"
+          vmUbuntu1.vm.host_name = "ubuntu64-xenial.vm"
+          vmUbuntu1.vm.network :hostonly, "192.168.56.12"
+          vmUbuntu1.vm.provision :ansible, :path => "playbookvm1Ubuntu.yml"
   end
 
-  config.vm.define :ubuntu64 do |ubuntu64|
-          ubuntu64.vm.box       = "ubuntu/trusty64"
-          ubuntu64.vm.host_name = "ubuntu64.vm"
-          ubuntu64.vm.network :hostonly, "192.168.56.12"
-          ubuntu64.vm.provision :shell, :path => "scriptUbuntu.sh"
+  config.vm.define "vmUbuntu2" do |vmUbuntu2|
+          vmUbuntu2.vm.box       = "ubuntu/trusty64"
+          vmUbuntu2.vm.host_name = "ubuntu64-trusty.vm"
+          vmUbuntu2.vm.network :hostonly, "192.168.56.12"
+          vmUbuntu2.vm.provision :shell, :path => "playbookvm2Ubuntu.yml"
   end
   
-  config.vm.define :ubuntu32 do |ubuntu32|
-          ubuntu32.vm.box       = "ubuntu/precise32"
-          ubuntu32.vm.host_name = "ubuntu32.vm"
-          ubuntu32.vm.network :hostonly, "192.168.56.13"
-          ubuntu32.vm.provision :shell, :path => "scriptUbuntu.sh"
+  config.vm.define "vmUbuntu3" do |vmUbuntu3|
+          vmUbuntu3.vm.box       = "ubuntu/precise64"
+          vmUbuntu3.vm.host_name = "ubuntu-precise64.vm"
+          vmUbuntu3.vm.network :hostonly, "192.168.56.13"
+          vmUbuntu3.vm.provision :shell, :path => "playbookvm3Ubuntu.yml"
   end
-  
+
 # End Configuration
 end

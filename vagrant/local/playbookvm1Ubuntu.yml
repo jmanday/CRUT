@@ -1,4 +1,4 @@
-- hosts: ubuntu32.vm, ubuntu64.vm
+- hosts: ubuntu64-xenial.vm
  
   tasks:
     - name: Actualizar paquetes
@@ -8,6 +8,9 @@
       apt: >
         update_cache=yes 
         upgrade=full
+
+    - name: Instalar git
+      apt: pkg=git state=lastest
     
     - name: Instalar MySQL
       apt: name={{ item }} update_cache=yes cache_valid_time=3600 state=present
@@ -20,6 +23,3 @@
         name: mysql 
         state: started
         enabled: true
-        
-    - name: Instalar git
-	  apt: pkg=git state=latest
