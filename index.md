@@ -139,6 +139,7 @@ Una vez comentado el por qué de la elección de **Ansible** lo siguiente será 
 ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito2/ansible/h2-img3.png "Instalación Ansible")
 
 
+
 #### Prueba de ansible sobre la instancia AMI
 
 Una vez creada la instancia e instalado el **ansible** en la máquina local, toca editar el fichero de *hosts* para inluir la máquina EC2 dentro de las conocidas por la herramienta de provisionamiento.
