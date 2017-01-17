@@ -250,6 +250,7 @@ Lo primero en realizar es instalar **Vagrant** en la máquina local para poder t
 
 ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito3/h3-img1.png)
 
+
 ### Orquestando en local
 Esta primera orquestación se va a realizar en local, por lo que se instalará [VirtualBox](https://www.virtualbox.org/) como proveedor y se podrá comprobar a través del mismo si **Vagrant** ha creado correctamente las tres máquinas virtuales.
 
