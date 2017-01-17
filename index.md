@@ -253,7 +253,7 @@ Lo primero en realizar es instalar **Vagrant** en la máquina local para poder t
 ### Orquestando en local
 Esta primera orquestación se va a realizar en local, por lo que se instalará [VirtualBox](https://www.virtualbox.org/) como proveedor y se podrá comprobar a través del mismo si **Vagrant** ha creado correctamente las tres máquinas virtuales.
 
-Una vez que se ha instalado la herramienta lo siguiente es definir el fichero **Vagrantfile** mediante el cual se definirán las máquinas virtuales. Para este caso se orquestarán tres máquinas virtuales con diferentes sistemas operativos; una con **Centos** y las dos restantes con **Ubuntu**, una de ellas con la versión **Trusty** de 64 bits, y la otra con la versión **Precise** de 32 bits.
+Una vez que se ha instalado la herramienta lo siguiente es definir el fichero **Vagrantfile** mediante el cual se definirán las máquinas virtuales. Para este caso se orquestarán tres máquinas virtuales con diferentes distribuciones del mismo sistemas operativo, Ubuntu de 64 bits; una con la distribución de **trusty**, otra de ellas con la distribución **precise**, y la última con con **xenial**.
 
 Lo primero será generar un fichero Vagrantfile por defecto con una serie de parámetros que serán posteriormente modificados y adaptados a las máquinas a crear a través de la orden **Vagrant init**, mediante el cual creará el siguiente fichero:
 
@@ -275,23 +275,21 @@ Una vez definido el fichero, ejecutamos la orden **Vagrant up** para que levante
 
 ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito3/h3-img9.png)
 
-Otra opción para crear las máquinas virtuales es mediante el proveedor, en este caso como se ha dicho antes **VirtualBox**. Para ello hay que indicarle a la orden de antes el parámetro del proveedor como se puede ver en la siguiente imagen:
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito3/h3-img22.png)
 
-![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito3/h3-img14.png)
 
 Para comprobar el correcto funcionamiento vamos a mirar en virtualbox si las tres máquinas virtuales han sido creadas:
 
 ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito3/h3-img10.png)
 
-Además de la anterior comprobación, vamos a realziar una conexión vía ssh con cada una de las máquinas virtuales para confirmar que todo esta correcto.
 
-![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito3/h3-img11.png)
+Cada máquina es provisionada a través de **Ansible** con su correspondiente fichero playboll como se muestra en las siguientes imágenes:
 
-![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito3/h3-img12.png)
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito3/h3-img23.png)
 
-![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito3/h3-img13.png)
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito3/h3-img24.png)
 
-Como muestran las imágenes, la orquestación de las máquinas virtuales en local se ha realizado correctamente.
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito3/h3-img25.png)
 
 
 ### Orquestando en cloud
