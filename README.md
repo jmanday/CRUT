@@ -40,6 +40,11 @@ Para comprobar el correcto funcionamiento vamos a mirar en virtualbox si las tre
 ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito3/h3-img10.png)
 
 
+Cada máquina es provisionada a través de **Ansible** con su correspondiente fichero playboll como se muestra en las siguientes imágenes:
+
+
+
+
 ## Orquestando en cloud
 Para realizar la orquestación de varias máquinas virtuales en cloud se va a utilizar el Iaas de [Microsoft Azure](https://azure.microsoft.com/es-es/), aprovechando el la subscripción gratis que regalan durante un mes.
 
