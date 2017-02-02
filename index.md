@@ -743,5 +743,3 @@ Con el servidor ejecutándose en una instancia de Azure y los microservicios en 
 Como se ha podido comprobar tanto el microservicio de **mongoLab** como el de **papertrail** funcionan correctamente cuando se ha añadido un nuevo usuario al sistema, por lo que podemos decir que se ha realizado una buena integración de los microservicios con el servidor para implementar dicha arquitectura.
 
 Desde el siguiente [enlace](http://35.167.248.75:3000/) se puede acceder a la aplicación y comprobar su funcionamiento.
-
-
