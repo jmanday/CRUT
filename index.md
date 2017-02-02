@@ -592,7 +592,7 @@ Con los contenedores creados y enlazados, solo queda probar que todo ha ido bien
 La imagen [jmanda/crut](https://hub.docker.com/r/jmanday/crut/tags/) del entorno de ejecución de la aplicación se encuentra alojada en el repositorio de **Docker Hub**, por lo que esta disponible para cualquiera que necesite un entorno de ejecución con esas herramientas y dependencias.
 
 
-##Despliegue en infraestructura virtual
+## Despliegue en infraestructura virtual
 
 Han sido muchos los servicios y tecnologías que se han utilizado para la realización diferentes tareas. Herramientas como **Docker** para crear contenedores, **Vagrant** para orquestar máquinas virtuales y **Ansible** o **Chef** entre otras para la gestión de configuraciones.
 
