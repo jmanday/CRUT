@@ -200,6 +200,7 @@ Con el servidor ya configurado, ahora a través de **Vagrant** vamos a definir u
   
 	end
 
+
 Esta máquina que será desplegada en Azure, será provisionada a través de **Ansible** con el fichero playbook correspondiente como se indica en el parámetro **congif.vm.provision** del fichero Vagrantfile descrito anteriormente.
 
 	- hosts: azure-vagrant
