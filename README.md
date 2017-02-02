@@ -258,7 +258,7 @@ por lo que probamos que todas las herramientas y servicios se han instalado corr
 
 Con el servidor ejecutándose en una instancia de Azure y los microservicios en Heroku, lo siguiente es probar que el sistema es estable y funciona correctamente. Para ellos crearemos un nuevo registro desde la aplicación y veremos su comportamiento tanto en la base de datos como en los logs de la misma.
 
-![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito5/h5-img9.png)
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito5/h5-img9.png)   
 
 ![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito5/h5-img10.png)
 
