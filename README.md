@@ -226,7 +226,10 @@ Esta máquina que será desplegada en Azure, será provisionada a través de **A
 		  shell: git clone https://github.com/jmanday/MEAN.git
 		
 		- name: install app dependencies 
-		  shell: cp -r ./MEAN/Proyecto2/* /usr/src/app/ && rm -rf ./MEAN && cd /usr/src/app && npm install 
+		  shell: cd MEAN/Proyecto2/ && npm install
+		  
+		- name: launch node
+		  shel: node ./bin/www.js	  
 
 
 Una vez definidos los dos ficheros ejecutamos la orden de vagrant para desplegar la máquina en Azure

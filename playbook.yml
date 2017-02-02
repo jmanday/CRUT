@@ -1,0 +1,30 @@
+# playbook.yml
+---
+- hosts: azure-vagrant
+  become: yes
+  remote_user: vagrant
+
+  tasks:
+    - name: update the system
+      apt: update_cache: yes
+  
+    - name: Install dependencies
+      apt: name={{ item }} state=latest
+      with_items:
+        - git
+        - curl
+        - wget
+              
+    - name: Install npm, nvm and  node
+      get_utl: url=https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh/.install.sh
+      script: install.sh
+      command: nvm install v6
+    
+    - name: download source code  
+      shell: git clone https://github.com/jmanday/MEAN.git
+  
+    - name: install app dependencies 
+      shell: cd MEAN/Proyecto2/ && npm install
+
+    - name: launch node
+      shell: node ./bin/www.js
