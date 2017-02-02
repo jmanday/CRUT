@@ -587,9 +587,162 @@ Se puede ver en la imagen anterior como se han creado dos entradas en el fichero
 
 ### Prueba
 
-Con los contenedores creados y enlazados, solo queda probar que todo ha ido bien y que la aplicación se ha desplegado dentro de un contenedor en una instancia de Amazon. Para ello solo basta con acceder en el navegador a la ip de la máquina y al puerto público que se indicó que escucharía para referenciarlo al del contenedor como se muestra en la imagen. 
-
-![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito4/h4-img16.png)
+Con los contenedores creados y enlazados, solo queda probar que todo ha ido bien y que la aplicación se ha desplegado dentro de un contenedor en una instancia de Amazon. Para ello solo basta con acceder en el navegador a la ip de la máquina y al puerto público que se indicó que escucharía para referenciarlo al del contenedo.
 
 
 La imagen [jmanda/crut](https://hub.docker.com/r/jmanday/crut/tags/) del entorno de ejecución de la aplicación se encuentra alojada en el repositorio de **Docker Hub**, por lo que esta disponible para cualquiera que necesite un entorno de ejecución con esas herramientas y dependencias.
+
+
+##Despliegue en infraestructura virtual
+
+Han sido muchos los servicios y tecnologías que se han utilizado para la realización diferentes tareas. Herramientas como **Docker** para crear contenedores, **Vagrant** para orquestar máquinas virtuales y **Ansible** o **Chef** entre otras para la gestión de configuraciones.
+
+Llegado a este punto del proyecto toca realizar el despligue de la aplicación en una infraestuctura virtual. Cabe recordar que esta aplicación esta basada en una arquitectura microservicios, por lo que será necesario el uso de las herramientas mencionadas anteriormente para implementarla. 
+
+En forma de resumen, la aplicación la podemos descomponer en el servidor principal donde se ejecuta la aplicación y el servicio de base de datos donde se implementa el modelo. El servidor será alojado en una máquina de **Azure**, mientras que el servicio de base de datos será desplegado en el PaaS **Heroku** a través de el add-on **MongoLab**.
+
+Utilizaremos **Vagrant** como herramienta de orquestación para crear la máquina servidor con Amazon AWS como proveedor. Dicha máquina será configurada con todos los servicios necesarios tales como **Node.js**, **Express**, etc, mediante el gestor de configuraciones **Ansible**. Una vez creada y configurada la máquina servidor, se le desplegará la aplicación para que se comience a ejecutar y escuchar peticiones.
+
+En la parte de los microservicios tenemos el mongodb, este microservicio será alojado a través de **Heroku**, añadiendo su add-on correspondiente. Otro microservicio que integrará el sistema y que también será algojado como un servicio externo desde **Heroku** será **papertrail** para el control de los logs.
+
+
+
+### Microservicios
+
+Este sistema implementa una arquitectura basada en microservicios, y como tal es necesario definirlos y levantarlos. Como se ha mencionado en el anterior apartado, la aplicación se compone de los microservicios de logs y base de datos, ambos desde Heroku.
+
+Una vez registrado e iniciado sesión en dicho PaaS lo siguiente es agregar esos **add-on** a la máquina virtual como se muetra en las imagenes
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito5/h5-img6.png)
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito5/h5-img7.png)
+
+y como se puede ver en el panel de administrador de Heroku, los dos microservicios han sido correctamente añadidos
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito5/h5-img8.png)
+
+
+
+### Despliegue del servidor
+
+Una vez que los microservicios han sido definidos, lo siguiente es desplegar el proyecto en el servidor. Para ello haremos uso de las tecnologías vistas durante el curso como se ha mencionado en el anterior apartado.
+
+Lo primero que tenemos que hacer es modificar los parámetros de conexión de la aplicación para que utilice como base de datos el microservicio declarado anteriormente. Será necesario entonces indicarle en el parámetro de conexión la url del microservicio de Heroku donde se debe conectar como se muestra en la imagen
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito5/h5-img5.png)
+
+
+Con el servidor ya configurado, ahora a través de **Vagrant** vamos a definir una máquina de Azure donde el servidor será alojado. Hemos definido el siguiente fichero vagrantfile donde se especifican las características y los parámetros que tendrá dicha máquina virtual
+
+
+	VAGRANTFILE_API_VERSION = '2'
+
+	Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  	config.vm.box = 'azure'
+  	config.vm.box_url = 'https://github.com/msopentech/	vagrant-azure/raw/master/dummy.box'
+
+  	config.ssh.username = 'vagrant'
+
+  	config.vm.provider :azure do |azure|
+    	azure.mgmt_certificate = File.expand_path('~/.ssh/azurevagrant.key')
+    	azure.mgmt_endpoint = 'https://management.core.windows.net'
+  
+    	azure.subscription_id = ENV['AZURE_SUBSCRIPTION_ID']
+
+    	azure.storage_acct_name = '' 
+
+    	azure.vm_image = 'b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_2-LTS-amd64-server-20150506-en-us-30GB'
+    
+	    azure.vm_user = 'vagrant' 
+	    azure.vm_password = 'vagrant123#@!' 
+	
+	    azure.vm_name = 'Ubuntu-Azure' 
+	    azure.cloud_service_name = '' 
+	
+	    azure.vm_location = 'North Europe'
+
+	    azure.tcp_endpoints = '3389:53389' 
+	    azure.winrm_https_port = 5986
+	    azure.ssh_port = '22'
+	  
+	    azure.winrm_transport = %w(https)
+	  end
+	  
+	    config.vm.provision "ansible" do |ansible|
+	    ansible.playbook = "playbook.yml"
+	  end
+  
+	end
+
+
+Esta máquina que será desplegada en Azure, será provisionada a través de **Ansible** con el fichero playbook correspondiente como se indica en el parámetro **congif.vm.provision** del fichero Vagrantfile descrito anteriormente.
+
+	- hosts: azure-vagrant
+  	become: yes
+  	remote_user: vagrant
+ 
+  	tasks:
+   		- name: update the system
+	  	  	apt: update_cache: yes
+	  
+	    - name: Install dependencies
+	      apt: name={{ item }} state=latest
+	      with_items:
+	        - git
+	        - curl
+	        - wget
+	              
+	    - name: Install npm, nvm and  node
+	      get_utl: url=https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh/.install.sh
+	      script: install.sh
+		  command: nvm install v6
+		  
+		- name: download source code  
+		  shell: git clone https://github.com/jmanday/MEAN.git
+		
+		- name: install app dependencies 
+		  shell: cd MEAN/Proyecto2/ && npm install
+		  
+		- name: launch node
+		  shel: node ./bin/www.js	  
+
+
+Una vez definidos los dos ficheros ejecutamos la orden de vagrant para desplegar la máquina en Azure
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito3/h3-img17.png)
+
+
+y vemos como la máquina se ha creado correctamente
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito5/h5-img1.png)
+
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito5/h5-img2.png)
+
+
+por lo que probamos que todas las herramientas y servicios se han instalado correctamente, al igual que los códigos fuentes del proyecto alojado en Github
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito5/h5-img3.png)
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito5/h5-img4.png)
+
+
+
+### Pruebas
+
+Con el servidor ejecutándose en una instancia de Azure y los microservicios en Heroku, lo siguiente es probar que el sistema es estable y funciona correctamente. Para ellos crearemos un nuevo registro desde la aplicación y veremos su comportamiento tanto en la base de datos como en los logs de la misma.
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito5/h5-img9.png)   
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito5/h5-img10.png)
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito5/h5-img11.png)
+
+![alt text](https://raw.githubusercontent.com/jmanday/Images/master/CRUT/Hito5/h5-img12.png)
+
+
+Como se ha podido comprobar tanto el microservicio de **mongoLab** como el de **papertrail** funcionan correctamente cuando se ha añadido un nuevo usuario al sistema, por lo que podemos decir que se ha realizado una buena integración de los microservicios con el servidor para implementar dicha arquitectura.
+
+Desde el siguiente [enlace](http://35.167.248.75:3000/) se puede acceder a la aplicación y comprobar su funcionamiento.
+
+
