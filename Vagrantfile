@@ -19,7 +19,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     azure.vm_user = 'vagrant' 
     azure.vm_password = 'vagrant123#@!' 
 
-    azure.vm_name = 'azure-vagrant' 
+    azure.vm_name = 'Ubuntu-Azure' 
     azure.cloud_service_name = '' 
 
     azure.vm_location = 'North Europe'
